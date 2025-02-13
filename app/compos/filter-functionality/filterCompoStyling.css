@@ -1,0 +1,175 @@
+div.filtering-section {
+    color: black;
+    margin: 1% 1.5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    h2 {
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+        font-weight: lighter;
+        margin: 15px 0;
+        color: var(--textColor_gray_dark);
+
+    }
+}
+
+.filter-books-options select {
+    background-color: #6b6b6b;
+    color: black;
+    border-radius: 10px;
+    outline: none;
+    padding: 2px 5px;
+    scroll-behavior: smooth;
+
+
+    option {
+        background-color: #6b6b6b;
+        color: white;
+        outline: none;
+        scrollbar-width: none;
+
+    }
+}
+
+div.filter-typeOfContent,
+div.filter-typeOfContent-options {
+    display: flex;
+    flex-direction: column;
+
+    & label, input {
+        cursor: pointer;
+    }
+
+    & label input {
+        margin: 10px 0;
+        border: none;
+        background-color: #ffefef;
+    }
+}
+
+div.filtering-section div.filter-books div.filter-books-options,
+div.filter-notes div.filter-notes-options div.completionStatus,
+div.isWithNotes, div.filter-timing div.lastAccessedStatus,
+div.addedDate, div.filter-typeOfContent div.filter-typeOfContent-options {
+    display: flex;
+    flex-direction: column;
+
+}
+
+div.filter-books span:hover,
+div.filter-notes span:hover,
+div.filter-timing span:hover,
+div.filter-typeOfContent span:hover{
+    background-color: var(--activeFoldersBackgroundColor);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    /*padding: 5px 0;*/
+    color: var(--textColor_in_dark_mode);
+    width: fit-content;
+    transition: .1s ease;
+}
+
+div.filtering-section span {
+    cursor: pointer;
+    padding: 8px 6px;
+    font-weight: lighter;
+    margin: 2px 0;
+    color: var(--textColor_gray_dark);
+}
+
+div.filtering-section input {
+    background-color: #3b3b3b;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 0;
+    color: white;
+}
+
+div.filtering-section input::placeholder {
+    color: white;
+}
+
+
+div.filtering-section .span-active {
+    background-color: var(--activeFoldersBackgroundColor);
+    border-radius: 5px;
+    color: var(--textColor_in_dark_mode);
+    width: fit-content;
+}
+
+.filtering-section div.filter-books-options div.basedOnGenre {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 20vh;
+    width: fit-content;
+    scrollbar-width: none;
+}
+
+@media screen and (width <= 1050px){
+    div.filtering-section {
+        color: black;
+        margin: 1% 1.5%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 1rem;
+        justify-content: center;
+
+        .filter-books,
+        .filter-notes,
+        .filter-timing,
+        .filter-typeOfContent {
+            hr{
+                /*display: none;*/
+                width: 50%;
+            }
+        }
+
+        h2 {
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            font-weight: lighter;
+            margin: 15px 0;
+            color: var(--textCollor_darkMode_lightMode);
+
+        }
+    }
+}
+
+@media screen and (width <= 500px){
+    div.filtering-section {
+        color: black;
+        margin: 1% 1.5%;
+
+        display: flex;
+        flex-direction: column;
+
+
+        .filter-books,
+        .filter-notes,
+        .filter-timing,
+        .filter-typeOfContent {
+            overflow-y: scroll;
+            hr{
+                /*display: none;*/
+                width: 50%;
+            }
+        }
+
+        h2 {
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            font-weight: lighter;
+            margin: 15px 0;
+            color: var(--textCollor_darkMode_lightMode);
+        }
+    }
+
+}

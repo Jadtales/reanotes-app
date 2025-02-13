@@ -1,0 +1,113 @@
+span.advancedSettingsSpan{
+    color: var(--textCollor_darkMode_lightMode);
+}
+
+dialog.advancedSettingsDialogContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 40vw;
+    background-color: var(--darkThemeBody-darkerGray_black);
+    border: none;
+    border-radius: var(--borderRadius);
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+    color: var(--textCollor_darkMode_lightMode);
+
+    div.header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        button {
+            border: none;
+            background: transparent;
+            outline: none;
+            cursor: pointer;
+
+            img{
+                filter: var(--imgColor_dark_gray);
+            }
+
+            img:hover{
+                background-color: var(--tag_backgroundColor);
+                border-radius: 4px;
+            }
+        }
+    }
+
+    div.optionsSection {
+        margin-top: 2%;
+
+        hr {
+            margin: 4% 0;
+        }
+
+        div.settingDateSpecificOption, div.settingQuestionTypes, div.settingLearningOptions {
+            margin: 4% 0;
+
+            h2 {
+                margin: 2% 0;
+                font-weight: normal;
+            }
+
+            div.settingsSection {
+                display: flex;
+                flex-direction: column;
+
+                div.setting-one, div.setting-two, div.setting-three {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1% 0;
+
+                    h4 {
+                        font-weight: lighter;
+                    }
+
+                    input {
+                        cursor: pointer;
+                    }
+
+                    /* Hide the increment and decrement buttons in Chrome, Safari, Edge, and Opera */
+                    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    /* Hide the increment and decrement buttons in Firefox */
+                    input[type="number"] {
+                        -moz-appearance: textfield;
+                        width: 28px;
+                        border-radius: 4px;
+                        outline: none;
+                        border: none;
+                        background-color: black;
+                        color: white;
+                        padding: 2px 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+dialog.advancedSettingsDialogContainer[open] {
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+
+    }
+}

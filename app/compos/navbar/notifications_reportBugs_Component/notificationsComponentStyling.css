@@ -1,0 +1,110 @@
+div.notificationsComponent {
+    background-color: var(--backgroundColor_notificationComponent);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: .9rem;
+    border: var(--border_tags);
+    color: var(--textCollor_darkMode_lightMode);
+
+    h1#NotifierUsername {
+        font-size: .8rem;
+        padding: 4px 6px;
+        background-color: #151414;
+        color: var(--textColor_in_dark_mode);
+        width: fit-content;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 10px 0;
+    }
+
+    h1#NotifierUsername:hover {
+        /*text-decoration: underline white;*/
+    }
+
+    div.whatChanged{
+        color: var(--textCollor_darkMode_lightMode);
+    }
+
+    A.actionOfChange {
+        text-decoration: none;
+        background-color: rgba(68, 68, 68, 0.53);
+        border-radius: 5px;
+        padding: 0 6px;
+        color: var(--textColor_in_dark_mode);
+    }
+}
+
+/*---- report bugs component styling*/
+div.reportBugsContainer {
+    & h1 {
+        margin-bottom: 5px;
+        font-size: .9rem;
+        color: var(--textCollor_darkMode_lightMode);
+        font-weight: lighter;
+    }
+
+    div.issuePriority {
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        button {
+            padding: 3px 9px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            background-color: var(--thirdPrimaryTextColor);
+            color: var(--border_tags);
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        button.active-button{
+            padding: 3px 9px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            background-color: black;
+            color: var(--border_tags);
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+    }
+
+    form#formElement {
+
+        textarea {
+            resize: none;
+            padding: 15px;
+            outline: none;
+            border: 1px solid #5b5b57;
+            border-radius: 10px;
+            background-color: var(--backgroundColor_frontnote);
+            color: var(--textCollor_darkMode_lightMode);
+        }
+
+        button {
+            margin: 10px 0;
+            padding: 8px 10px;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            background-color: #000;
+            color: var(--textColor_in_dark_mode);
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: var(--hoveredButtonWithBlackBackGroundColor);
+            transition: .2s ease;
+        }
+    }
+}

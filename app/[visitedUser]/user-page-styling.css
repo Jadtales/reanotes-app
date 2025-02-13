@@ -1,0 +1,150 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin: 6% 10%;
+    color: var(--textCollor_darkMode_lightMode);
+}
+
+.leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.userHeader {
+    display: flex;
+    flex-direction: column;
+}
+
+.userHeaderRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.username {
+    color: var(--secondPrimaryTextColor);
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+.followButton {
+    padding: 10px;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: black;
+    color: var(--textColor_in_dark_mode);
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.briefIntro {
+    font-size: 0.9rem;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.interestsSection {
+    margin-bottom: 5px;
+}
+
+.interestsHeader {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.interestsList {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.interestTag {
+    list-style: none;
+    background-color: var(--tag_backgroundColor);
+    padding: 2px 4px;
+    border-radius: var(--borderRadiusTags);
+    border: var(--border_tags);
+}
+
+.followersFollowing {
+    display: flex;
+    gap: 2rem;
+}
+
+.followersFollowing h5 {
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.followersFollowing span {
+    font-size: 1.3rem;
+    font-weight: lighter;
+}
+
+.aboutSection {
+    margin-bottom: 5px;
+}
+
+.aboutHeader {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.aboutText {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: var(--secondaryTextColor);
+    outline: none;
+    width: 40vw;
+}
+
+.notecardsHeader {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.socialsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socialsHeader {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.socialLink {
+    background-color: black;
+    color: var(--textColor_in_dark_mode);
+    text-decoration: none;
+    border: var(--border_tags);
+    border-radius: 4px;
+    padding: 4px 6px;
+    text-align: center;
+}
+
+@media screen and (width <= 700px){
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2.5rem;
+        margin: 6% 5%;
+        color: var(--textCollor_darkMode_lightMode);
+    }
+
+    .aboutText {
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+}

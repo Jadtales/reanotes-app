@@ -1,0 +1,23 @@
+div.learnModeContainer{
+    overflow: hidden;
+    padding: 2% 15%;
+
+    div.quickTools{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1% .5%;
+
+        button.switchToReviewMode{
+            display: flex;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            img{
+                filter: var(--imgColor_dark_gray);
+            }
+        }
+    }
+}

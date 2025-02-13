@@ -1,0 +1,217 @@
+:root {
+    /*reanotes icon*/
+    --borderRadiusRNICON: 10px;
+    --darkThemeBody: #f0efeb;
+    --darkThemeBody-darkerGray_black: #f4f2ec;
+    --darkTheme_componentsBackgroundColor: black;
+
+    --mainBoxShadow: 0 2px black;
+
+    --backgroundColor_componentsInsideComponent: black;
+    --backgroundColor_slight_dark: #0f0e0e;
+    --backgroundColor_notificationComponent: #eceae3;
+    --backgroundColor_mostViewedNotecard: #e1e1e16b;
+
+    /*--backgroundColor_*/
+    --tag_backgroundColor: #e8e7de;
+
+    --activeFoldersBackgroundColor: black;
+
+    --secondPrimaryTextColor: #b92b00;
+    --thirdPrimaryTextColor: #ae5630;
+
+    --shadowing: 0 4px 24px 0 #00000004,0 4px 32px 0 #00000004,0 2px 64px 0 #00000003,0 16px 32px 0 #00000003;
+
+    --MarkedTextBackgroundColor: #ffe4d8;
+
+    /*---- front notes design only*/
+    --backgroundColor_frontnote: #f2f0eb;
+    --backgroundColor_recentVisitedNoteCard: rgba(232, 231, 222, 0.56);
+    --backgroundColor_frontnote_hovered: #f4f3f0;
+
+    --imgColor_dark_gray: invert(0%) sepia(7%) saturate(0%) hue-rotate(165deg) brightness(90%) contrast(108%);
+    --imgColor_white: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7478%) hue-rotate(3deg) brightness(93%) contrast(85%);
+    --ImgColor_completeWhite: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5049%) hue-rotate(297deg) brightness(116%) contrast(100%);
+
+    --input_backgroundColor: white;
+    --input_backgroundColor_darkGray_lightGray: #eeece6;
+
+    --button_backgroundColor: black;
+    --button_backgroundColor_statsComponents: #f4f4f4;
+
+
+    --textColor: black;
+    --textColor_in_dark_mode: #ceccc5;
+    --textColor_In_white_mode: #29261b;
+    --textCollor_darkMode_lightMode: #29261b;
+    --textColor_gray_dark: dark;
+    --textColor_opposite: white;
+    --textColor_unavailble-component: #6d6d6d;
+
+    --borderRadius: 4px;
+    --border: 1px solid black;
+    --borderFrontNoteCardSettings: 1px solid black;
+    --border_tags: 1px solid #a8a8a8;
+    --border_gray_dark: #d4d4d4;
+    --border_frontNote: 1px solid #a8a8a8;
+
+    --borderRadiusTags: 4px;
+    --borderRadiusNote: 8px;
+    --borderRadiusImg: 4px;
+    --borderRadius_forIcons: 5px;
+
+    /*--- background colors*/
+    --backGroundColorHoveredButton: #000000;
+
+    /*--- padding*/
+    --paddingNote: 15px;
+
+    /*--- gaps*/
+    --gapNotes: 20px;
+
+    /*--- text color*/
+    --mainColor: #93c1c1;
+    --mainColor2: #ebe9dc;
+
+    /* ---- hover effects*/
+    --hoveredButtonColor: #b2b2b2;
+    --hoveredButtonTextColor: #646464;
+    --hoveredButtonWithBlackBackGroundColor: rgb(37, 37, 37);
+    --hoverEffectTrasition: .3s ease-in-out;
+
+    --hoveredImportedNotecard: rgba(219, 218, 210, 0.56);
+    /*hovered effects in dark mode*/
+    --hoveredBackgroundColor_frontNote: #f8f8f8;
+
+    --imgZoomingScale: scale(102);
+}
+
+::selection {
+    background-color: #d2d2d2;
+    color: black;
+}
+
+[data-theme='dark'] {
+    /* Dark Theme Variables */
+    --textColor: white;
+    --textColor_opposite: black;
+    --textColor_gray_dark: #ababab;
+    --textCollor_darkMode_lightMode: #ababab;
+    --textColor_unavailble-component: #ababab;
+
+
+    --darkThemeBody: #181716;
+    --darkThemeBody-darkerGray_black: #232221;
+
+    /*--darkTheme_componentsBackgroundColor: #2e2e2e;*/
+    --backgroundColor_componentsInsideComponent: black;
+    --backgroundColor_notificationComponent: #232221;
+    --backgroundColor_mostViewedNotecard: #21201f;
+
+    --MarkedTextBackgroundColor: #97644e;
+
+    --activeFoldersBackgroundColor: #af5732;
+
+    --input_backgroundColor: rgb(29, 29, 29);
+    --input_backgroundColor_darkGray_lightGray: #1b1b1b;
+
+    --button_backgroundColor: rgb(29, 29, 29);
+    --button_backgroundColor_statsComponents: black;
+
+    --imgColor_dark_gray: invert(89%) sepia(0%) saturate(2717%) hue-rotate(15deg) brightness(83%) contrast(71%);
+    --imgColor_white: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7478%) hue-rotate(3deg) brightness(93%) contrast(85%);
+
+    --tag_backgroundColor: #494949;
+    --hoveredTag_backgroundColor: #bfbfbf;
+
+    /*---- front notes design only*/
+    --backgroundColor_frontnote: #232221;
+    --backgroundColor_recentVisitedNoteCard: #232221;
+    --backgroundColor_frontnote_hovered: #2d2d2d;
+
+
+    --border: 1px solid #3d3d3d;
+    --border_tags: 1px solid #3d3d3d;
+    --border_gray_dark: #3d3d3d;
+    --border_frontNote: none;
+    --borderFrontNoteCardSettings: 1px solid white;
+    --backGroundColorHoveredButton: #4d4d4d;
+    --mainColor: #93c1c1;
+    --mainColor2: #ebe9dc;
+
+    --mainBoxShadow: 0px 2px #3d3d3d;
+
+    --hoveredButtonColor: #b2b2b2;
+    --hoveredButtonTextColor: rgb(32, 32, 32);
+    --hoveredButtonWithBlackBackGroundColor: rgb(57, 57, 57);
+
+    --hoveredImportedNotecard: #202020FF;
+
+    /*hovered effects in dark mode*/
+    --hoveredBackgroundColor_frontNote: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Merriweather, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--darkThemeBody);
+    min-height: 100vh;
+}
+
+
+/* ----global standard styling ----*/
+button.stdIconStyling {
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+
+    img {
+        transform: scale(1);
+        filter: var(--imgColor_dark_gray);
+    }
+}
+
+li#errorMessageStyling {
+    background-color: #f6dddd;
+    border: 1px solid #ff3333;
+    padding: 5px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-size: .8rem;
+    font-weight: lighter;
+    font-family: Arial, sans-serif;
+    cursor: default;
+}
+
+button#notificationsButton {
+    /*background-color: black;*/
+    /*border: var(--border);*/
+
+    h2.numberOfReceivedNotifications {
+        position: absolute;
+        font-size: 10px;
+        color: var(--textColor_opposite);
+    }
+}
+
+@media screen and (width <= 500px) {
+    body {
+        margin: 0 0;
+        padding: 0 0;
+        /*height: 100vh;*/
+        /*width: 100vw;*/
+    }
+}

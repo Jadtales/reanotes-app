@@ -1,0 +1,281 @@
+div.registrationPageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    gap: 10rem;
+    margin: 0 15%;
+    color: var(--textColor_gray_dark);
+    div.registrationHeadTitle {
+        display: flex;
+        align-items: center;
+        font-size: 3rem;
+        gap: 1rem;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    div.login_signup_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+
+        div.registrationFormSwitch {
+            margin-bottom: 20px;
+            margin-top: 5px;
+
+            span {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        div.registrationForm form, div.loginForm form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            input {
+                padding: 10px 10px;
+                border: var(--border_tags);
+                outline: none;
+                background-color: transparent;
+                border-radius: 10px;
+                scrollbar-width: none;
+                width: 400px;
+                color: var(--textColor_gray_dark);
+            }
+
+            button {
+                background-color: transparent;
+                outline: none;
+                border-radius: 10px;
+                border: var(--border_tags);
+                padding: 10px 0;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width: 400px;
+                color: var(--textColor_gray_dark);
+
+
+                img {
+                    padding: 0;
+                    display: flex;
+                    filter: var(--imgColor_dark_gray);
+                }
+            }
+
+            button#connectWithGoogle {
+                border: none;
+                cursor: default;
+            }
+
+            button#connectWithGoogle:hover {
+                background-color: transparent;
+            }
+
+            button:hover {
+                background-color: var(--hoveredButtonTextColor);
+            }
+        }
+    }
+
+    div.quotes {
+        width: 50%;
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        span {
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media screen and (width <= 1200px) {
+
+    div.registrationPageContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin: 5%;
+
+        div.login_signup_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: fit-content;
+
+            div.registrationFormSwitch {
+                margin-bottom: 20px;
+
+                span {
+                    text-decoration: underline;
+                    cursor: pointer;
+                    color: var(--textColor_gray_dark);
+                }
+            }
+
+            div.registrationForm form, div.loginForm form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                input {
+                    padding: 10px 10px;
+                    border: var(--border_tags);
+                    outline: none;
+                    background-color: transparent;
+                    border-radius: 10px;
+                    scrollbar-width: none;
+                    color: var(--textColor_gray_dark);
+                    width: 400px;
+                }
+
+                button {
+                    background-color: transparent;
+                    outline: none;
+                    border-radius: 10px;
+                    border: var(--border_tags);
+                    padding: 10px 0;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    width: 400px;
+
+
+                    img {
+                        padding: 0;
+                        display: flex;
+
+                    }
+                }
+
+                button#connectWithGoogle {
+                    border: none;
+                    cursor: default;
+                }
+
+                button#connectWithGoogle:hover {
+                    background-color: transparent;
+                }
+
+                button:hover {
+                    background-color: #eaeaea;
+                }
+            }
+        }
+
+        div.quotes {
+            font-size: 10px;
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            width: 24rem;
+        }
+    }
+}
+
+@media screen and (width <= 500px) {
+
+    div.registrationPageContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin: 5%;
+
+        div.login_signup_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: fit-content;
+
+            div.registrationFormSwitch {
+                margin-bottom: 20px;
+
+                span {
+                    /*font-size: 1em;*/
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            div.registrationForm form, div.loginForm form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                input {
+                    padding: 10px 10px;
+                    border: var(--border_tags);
+                    outline: none;
+                    background-color: transparent;
+                    border-radius: 10px;
+                    scrollbar-width: none;
+                    width: 100%;
+                    color: var(--textColor_gray_dark);
+                }
+
+                button {
+                    background-color: transparent;
+                    outline: none;
+                    border-radius: 10px;
+                    border: var(--border_tags);
+                    padding: 10px 0;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    width: 100%;
+
+
+                    img {
+                        padding: 0;
+                        display: flex;
+
+                    }
+                }
+
+                button#connectWithGoogle {
+                    border: none;
+                    cursor: default;
+                }
+
+                button#connectWithGoogle:hover {
+                    background-color: transparent;
+                }
+
+                button:hover {
+                    background-color: #eaeaea;
+                }
+            }
+        }
+
+        div.quotes {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 300px;
+            text-align: justify;
+
+            h1{
+                font-size: 1rem;
+            }
+            span{
+                font-size: 1rem;
+            }
+        }
+    }
+}

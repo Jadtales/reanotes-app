@@ -1,0 +1,125 @@
+div.pageContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1.interestQuestions {
+        font-size: 30px;
+        margin-bottom: 1rem;
+        color: var(--textColor_gray_dark);
+    }
+
+    div.options {
+        width: 40vw;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+
+            li {
+                list-style: none;
+                background-color: var(--backgroundColor_buttonInWhiteMode);
+                padding: 4px 10px;
+                border-radius: 10px;
+                cursor: pointer;
+                width: fit-content;
+            }
+
+            li:hover {
+                background-color: #dbdbdb;
+                transition: .2s ease;
+            }
+        }
+    }
+
+    button.skipButton {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        letter-spacing: 2px;
+        color: var(--textColor_gray_dark);
+        cursor: pointer;
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+
+}
+
+div.uploadKindleNotesStage {
+
+    button.uploadKindleNotesButton {
+        background-color: var(--button_backgroundColor);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    button.uploadKindleNotesButton:hover {
+        background-color: var(--hoveredButtonWithBlackBackGroundColor);
+        transition: .2s ease;
+    }
+}
+
+
+@media screen and (width <= 500px) {
+    div.pageContainer {
+        width: 90vw;
+        /*height: 100%;*/
+
+        h1.interestQuestions {
+            font-size: 30px;
+            margin-bottom: 1rem;
+            /*text-align: justify;*/
+        }
+
+        div.options {
+            width: 100%;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-bottom: 50px;
+
+                li {
+                    list-style: none;
+                    background-color: var(--backgroundColor_buttonInWhiteMode);
+                    padding: 4px 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    width: fit-content;
+                }
+
+                li:hover {
+                    background-color: #dbdbdb;
+                    transition: .2s ease;
+                }
+            }
+        }
+
+        button.skipButton {
+            background-color: transparent;
+            outline: none;
+            border: none;
+            letter-spacing: 2px;
+            color: var(--textColor_gray_dark);
+            cursor: pointer;
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+
+        div.peopleToFollowStage {
+            h2 {
+            }
+        }
+    }
+
+}

@@ -1,0 +1,157 @@
+dialog.exportNotecardModalContainer{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    cursor: default;
+    outline: none;
+    animation: fadeIn .5s;
+    background-color: var(--darkThemeBody);
+    padding: 30px 40px;
+    color: var(--textCollor_darkMode_lightMode);
+    border: var(--border_tags);
+
+    img{
+        filter: var(--imgColor_dark_gray);
+        float: right;
+        cursor: pointer;
+    }
+    img:hover{
+        border-radius: 4px;
+    }
+
+    div.dialogContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        min-width: 600px;
+        max-width: 40vw;
+        height: 25vh;
+
+        border-radius: var(--borderRadius);
+
+        div.dialogHeader{
+            h1{
+                font-size: 2rem;
+                font-weight: normal;
+            }
+
+            p{
+                font-weight: lighter;
+                font-size: .8rem;
+                margin: 5px 0;
+            }
+        }
+
+        div.file-types{
+            display: flex;
+            flex-direction: row;
+            /*gap: 1rem;*/
+            justify-content: space-between;
+            align-items: center;
+
+            button.exportFileTypeButton{
+                background-color: transparent;
+                border: var(--border_tags);
+                border-radius: 4px;
+                color: var(--textCollor_darkMode_lightMode);
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: center;
+                width: 32%;
+                gap: 10px;
+                padding: 10px;
+                cursor: pointer;
+                transition: .5s ease;
+                img{
+                    filter: var(--imgColor_dark_gray);
+                }
+            }
+
+            button:hover{
+                background-color: var(--backgroundColor_frontnote_hovered);
+                transition: .5s ease;
+            }
+        }
+
+        div.send-highlights-by-email{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            gap: 5px;
+
+            h5{
+                font-weight: lighter;
+            }
+
+            input{
+                width: 100%;
+                padding: 10px;
+                background-color: transparent;
+                border: var(--border_tags);
+                border-radius: 4px;
+                font-size: 1rem;
+                outline: none;
+                color: var(--textCollor_darkMode_lightMode);
+            }
+
+            button.sendToEmailButton{
+                display: flex;
+                justify-content: end;
+                cursor: pointer;
+                margin-top: 5px;
+                background-color: var(--thirdPrimaryTextColor);
+                color: var(--textColor_in_dark_mode);
+                font-size: 1rem;
+                padding: 4px 6px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                width: fit-content;
+                transition: .5s ease;
+            }
+
+            button.sendToEmailButton:hover{
+                transition: .2s ease;
+                background-color: black;
+            }
+        }
+    }
+}
+
+@media screen and (width <= 750px){
+    dialog.exportNotecardModalContainer {
+        height: 100vh;
+        /*width: 7;*/
+        overflow-x: hidden;
+        div.dialogContainer {
+            div.dialogHeader{
+                margin-top: 20px;
+                width: 75vw;
+            }
+
+
+            div.file-types {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: start;
+                gap: 12px;
+                margin: 20px 0;
+                width: 100%;
+
+                button {
+                    width: 100%;
+                }
+            }
+
+            div.send-highlights-by-email{
+                width: 75vw;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+button.keyboardInstructions {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+    border-radius: 5px;
+    border: var(--border_tags);
+    cursor: pointer;
+
+    img {
+        z-index: 3;
+        filter: var(--imgColor_white)
+    }
+}
+
+
+dialog.keyboardInstructionsContainer {
+
+    animation: fadeIn .5s;
+    color: var(--textCollor_darkMode_lightMode);
+
+    background-color: var(--darkThemeBody);
+    border-radius: 5px;
+    padding: 30px;
+    border: none;
+    outline: none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div.closeKeyboardInstructionsModal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10%;
+
+
+        img {
+            cursor: pointer;
+            filter: var(--imgColor_dark_gray);
+        }
+
+        img:hover {
+            cursor: pointer;
+            filter: var(--imgColor_dark_gray);
+            border-radius: 4px;
+        }
+    }
+
+    div.difficultyLevelKeys,
+    div.nextPreviousCards,
+    div.switchTermDefinition {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5rem;
+
+        h1 {
+            font-size: .9rem;
+            font-weight: normal;
+        }
+
+        div.keys {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+
+            span {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            img{
+                filter: var(--imgColor_dark_gray);
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}

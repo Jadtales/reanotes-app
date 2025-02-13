@@ -1,0 +1,159 @@
+div.user-notecard-container {
+    background-color: #202020;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--textColor_in_dark_mode);
+
+
+    width: 50vw;
+
+    div.user-notecard-section {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5rem;
+
+        div.username-purpose {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            a#username {
+                color: var(--secondPrimaryTextColor);
+                font-weight: bold;
+            }
+        }
+
+        div.notecard_ui {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            font-weight: lighter;
+
+            img {
+                border-radius: var(--borderRadiusImg);
+            }
+
+            div.notecard_credentials {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                div.booktitle-authorname {
+
+                }
+
+                h1.bookTitle {
+                    font-size: 1.2rem;
+                }
+
+                span {
+                    font-size: .8rem;
+                }
+
+                button.add-notecard-button {
+                    width: fit-content;
+                    padding: 6px 8px;
+                    border-radius: 4px;
+                    outline: none;
+                    border: none;
+                    background-color: black;
+                    color: var(--textColor_in_dark_mode);
+                    cursor: pointer;
+                    position: relative;
+
+                }
+
+                dialog.add-notecard-button-dialog {
+                    position: absolute;
+                    border-radius: var(--borderRadiusTags);
+                    margin: 5px 0;
+                    outline: none;
+                    border: none;
+                    background-color: var(--darkThemeBody-darkerGray_black);
+                    ul {
+                        li {
+                            padding: 10px;
+                            list-style: none;
+                            text-align: start;
+                            cursor: pointer;
+                            color: var(--textColor_in_dark_mode);
+                        }
+
+                        li:hover {
+                            background-color: black;
+                            color: var(--textColor_in_dark_mode);
+                        }
+                    }
+                }
+
+                p.notecard-description {
+                    width: 100%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    font-size: .8rem;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; /* Number of lines you want to show */
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+
+    div.comment-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px 6px;
+        width: 100%;
+        /*background-color: black;*/
+
+        textarea#text-area-comment {
+            padding: 8px;
+            outline: none;
+            width: 100%;
+            border: 1px solid #5b5b57;
+            border-radius: 5px;
+            background-color: #101010;
+            color: var(--textColor_in_dark_mode);
+        }
+
+        button.submit-comment-button {
+            background-color: black;
+            color: var(--textColor_in_dark_mode);
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            width: fit-content;
+            cursor: pointer;
+            transition: .5s ease;
+
+        }
+
+        button.submit-comment-button:hover {
+            background-color: #202020;
+            transition: .2s ease;
+        }
+    }
+}
+
+
+@media screen and (width <= 700px) {
+    div.user-notecard-container {
+        background-color: #202020;
+        border-radius: 6px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--textColor_in_dark_mode);
+
+
+        width: 90vw;
+    }
+}

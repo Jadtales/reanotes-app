@@ -1,0 +1,127 @@
+div#welcomingCompoContainer {
+    margin: 2rem 0;
+
+    h1.greeting {
+        font-size: 2rem;
+        font-weight: lighter;
+        margin: 20px 5px;
+        color: var(--textColor_gray_dark);
+
+        span {
+            color: var(--secondPrimaryTextColor);
+        }
+    }
+
+    div.welcomingSectionContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0 1rem;
+
+        div.recentViewedNotecards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem 0;
+
+            background-color: transparent;
+            border: var(--border_tags);
+            border-radius: 10px;
+
+            padding: 10px;
+            width: 350px;
+            height: 230px;
+
+            overflow-y: scroll;
+            scrollbar-width: none;
+
+            div{
+                color: var(--textCollor_darkMode_lightMode);
+                height: 100vh;
+                margin-top: 25%;
+                font-weight: lighter;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+/*---- RecentVisitedNote Component*/
+div#recentViewedNoteCardContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--backgroundColor_recentVisitedNoteCard);
+
+    padding: 6px 8px;
+    height: fit-content;
+    border-radius: 8px;
+    border: var(--border_tags);
+    width: 100%;
+
+
+    h4 {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 160px;
+        color: var(--textColor_gray_dark);
+    }
+
+    span {
+        font-size: .8rem;
+        font-weight: lighter;
+        color: var(--textColor_gray_dark);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--textColor_gray_dark);
+        transition: .2s ease;
+
+        border-radius: 4px;
+        padding: 2px 6px;
+    }
+
+    a:hover {
+        color: var(--secondPrimaryTextColor);
+        transition: .2s ease;
+    }
+}
+
+@media screen and (width <= 700px) {
+    div#welcomingCompoContainer {
+        div.welcomingSectionContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+
+            div.recentViewedNotecards {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem 0;
+
+                background-color: transparent;
+                border: var(--border_tags);
+                border-radius: 10px;
+                padding: 10px;
+                width: 100%;
+
+                overflow-y: scroll;
+                height: 24vh;
+                scrollbar-width: none;
+            }
+
+        }
+    }
+
+    div#recentViewedNoteCardContainer {
+        width: 85vw;
+    }
+
+}

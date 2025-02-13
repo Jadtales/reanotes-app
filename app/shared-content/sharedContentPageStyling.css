@@ -1,0 +1,57 @@
+div.sharedContentPageContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: center;
+    gap: 10px;
+
+    /*height: 100vh;*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /*margin: 0 30%;*/
+    color: var(--textColor_gray_dark);
+
+    div.topLayer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px;
+        width: 100%;
+        img#reanotesIcon{
+            border-radius: 4px;
+        }
+
+        button.starIcon{
+            display: flex;
+            cursor: pointer;
+            width: fit-content;
+            justify-content: right;
+            float: right;
+            border: none;
+            background-color: transparent;
+
+            img{
+                filter: var(--imgColor_dark_gray);
+            }
+        }
+    }
+
+    div.username_authorName{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 15px;
+
+        cite.username{
+            cursor: pointer;
+            text-decoration: 1px solid black;
+        }
+    }
+
+
+}

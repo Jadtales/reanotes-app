@@ -1,0 +1,49 @@
+div.suggestedNote {
+    cursor: pointer;
+    /*z-index: -1;*/
+    padding: var(--paddingNote);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gapNotes);
+    border: var(--border_tags);
+    margin: 15px 0;
+    min-width: fit-content;
+
+    border-radius: var(--borderRadiusNote);
+
+    & img {
+        border-radius: var(--borderRadiusImg);
+    }
+
+    & div.noteInfos{
+        display: flex;
+        flex-direction: column;
+
+
+        & h1{
+            font-size: 1.5rem;
+            color: var(--textColor_gray_dark);
+
+        }
+        & p#bookAuthorName{
+            font-size: .8rem;
+            color: #ababab;
+        }
+
+        & p#notedByWho{
+            background-color: var(--tag_backgroundColor);
+            width: fit-content;
+            padding: 5px;
+            color: var(--textColor_gray_dark);
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: .8rem;
+        }
+    }
+}
+
+div.suggestedNote:hover {
+    background-color: var(--backgroundColor_frontnote_hovered);
+    transition: .2s ease;
+}
+

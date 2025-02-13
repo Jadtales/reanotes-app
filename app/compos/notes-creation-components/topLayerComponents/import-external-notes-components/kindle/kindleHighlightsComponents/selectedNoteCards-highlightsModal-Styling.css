@@ -1,0 +1,308 @@
+button.importKindleHighlightsButton {
+    background-color: black;
+    /*padding: var(--button-padding);*/
+    /*border-radius: var(--button-border-radius);*/
+    /*border: var(--button-border);*/
+    /*color: var(--button-text-color);*/
+    display: flex;
+    cursor: pointer;
+    outline: none;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    justify-content: start;
+    gap: 5px;
+
+    img{
+        filter: var(--imgColor_dark_gray)
+    }
+}
+
+button.kindleHighlightsButton{
+    background-color: black;
+    padding: 16px;
+    border-radius: 5px;
+    border: 1px solid #3d3d3d;
+    color: var(--textColor_in_dark_mode);
+    display: flex;
+    cursor: pointer;
+    outline: none;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+
+    img{
+        filter: var(--imgColor_white)
+    }
+}
+
+dialog.KindleHighlightsSelectionContainer {
+    background-color: var(--darkThemeBody);
+    border: var(--border_tags);
+    border-radius: 10px;
+
+    animation: fadeIn .5s;
+    padding: 20px;
+
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    height: 70vh;
+    width: 70vw;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    div.dialogContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1rem;
+        color: var(--textColor_gray_dark);
+
+        div.topCompoLayer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+
+            img {
+                filter: var(--imgColor_dark_gray);
+            }
+
+            div.typeOfSelection {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+
+                button {
+                    border-radius: var(--borderRadiusTags);
+                    background-color: var(--backgroundColor_recentVisitedNoteCard);
+                    border: 1px solid transparent;
+                    padding: 4px 6px;
+                    color: var(--textColor_gray_dark);
+                    cursor: pointer;
+                }
+
+                /*button:hover {*/
+                /*    border: var(--border_tags);*/
+                /*    transition: .2s ease;*/
+                /*}*/
+            }
+
+            img {
+                filter: var(--textColor_gray_dark);
+                cursor: pointer;
+            }
+
+            img:hover {
+                cursor: pointer;
+                background-color: var(--tag_backgroundColor);
+                border-radius: var(--borderRadiusTags);
+            }
+        }
+
+       div.import_warning_section{
+           display: flex;
+           flex-direction: row;
+           align-items: center;
+           gap: 1rem;
+           button.FinalImportButton {
+               padding: 6px 12px;
+               background-color: var(--backgroundColor_recentVisitedNoteCard);
+               border-radius: var(--borderRadiusTags);
+               border: 1px solid transparent;
+               outline: none;
+               color: var(--textColor_gray_dark);
+               cursor: pointer;
+           }
+
+           button.FinalImportButton:hover {
+               /*background-color: var(--border_tags);*/
+               border: var(--border_tags);
+               transition: .2s ease;
+           }
+
+           span.warningSection{
+
+           }
+       }
+
+        p.filesLoader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            font-weight: lighter;
+        }
+
+        div.noteCards {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            align-items: start;
+            /*flex-wrap: wrap;*/
+            /*justify-content: stretch;*/
+        }
+    }
+}
+
+/*Kindle Notecards styling*/
+div.kindleNoteCardContainer-active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    /*background-color: var(--hoveredImportedNotecard);*/
+
+    border: var(--border_tags);
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: .5s ease;
+
+    button.selectionButton {
+        display: flex;
+        width: 50px;
+        height: 26px;
+        border: 1px solid black;
+        background-color: transparent;
+        outline: none;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+
+    div.authorNameAndBook {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+
+        h3.bookTitle {
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: start;
+            width: 300px;
+            -webkit-line-clamp: 1;
+            justify-content: start;
+            -webkit-box-orient: vertical;
+        }
+
+        span.bookAuthor {
+            color: var(--textColor_gray_dark);
+            text-align: start;
+            font-size: .8rem;
+            font-weight: lighter;
+        }
+    }
+
+    div.otherInfos {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        gap: 10px;
+
+        span.highlightsQuantity {
+            font-size: 12px;
+            background-color: var(--tag_backgroundColor);
+            color: var(--textColor_gray_dark);
+            border-radius: 5px;
+            padding: 4px 6px;
+            box-shadow: var(--shadowing);
+        }
+    }
+
+}
+
+div.kindleNoteCardContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    background-color: transparent;
+
+    border: var(--border_tags);
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: .5s ease;
+
+
+    div.authorNameAndBook {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+
+        img {
+            filter: var(--textColor_gray_dark);
+        }
+
+        h3.bookTitle {
+            color: var(--textColor_gray_dark);
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: start;
+            width: 300px;
+            -webkit-line-clamp: 1;
+            justify-content: start;
+            -webkit-box-orient: vertical;
+        }
+
+        span.bookAuthor {
+            color: var(--textColor_gray_dark);
+            text-align: start;
+            font-size: .8rem;
+            font-weight: lighter;
+        }
+    }
+
+    div.otherInfos {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        gap: 10px;
+
+        span.highlightsQuantity {
+            font-size: 12px;
+            background-color: var(--tag_backgroundColor);
+            color: var(--textColor_gray_dark);
+            border-radius: 5px;
+            padding: 4px 6px;
+            box-shadow: var(--shadowing);
+        }
+    }
+
+
+}
+
+div.kindleNoteCardContainer:hover {
+    background-color: var(--hoveredImportedNotecard);
+    transition: .8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

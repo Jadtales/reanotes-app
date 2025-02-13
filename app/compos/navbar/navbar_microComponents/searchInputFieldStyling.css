@@ -1,0 +1,116 @@
+.searchButton-active {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--tag_backgroundColor);
+    border-radius: 10px;
+    padding: 5px 7px;
+
+    img {
+        filter: var(--imgColor_dark_gray);
+    }
+
+    input {
+        width: fit-content;
+        padding: 0 5px;
+
+        background-color: transparent;
+
+        border: none;
+        outline: none;
+
+        transition: .2s ease-in-out;
+
+        font-size: 20px;
+        color: var(--textColor_gray_dark);
+    }
+
+    input::placeholder {
+        width: fit-content;
+        color: var(--textColor_gray_dark);
+        font-size: 1.1rem;
+    }
+}
+
+.searchButton-inactive {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s ease;
+
+
+    & img {
+        transform: scale(1);
+        filter: var(--imgColor_dark_gray)
+    }
+
+    input {
+        width: 0;
+
+        background-color: transparent;
+
+        border: none;
+        outline: none;
+
+        transition: .2s ease-in-out;
+
+        font-size: 20px;
+        color: black;
+
+    }
+
+}
+
+.searchButton-inactive:hover {
+    background-color: var(--tag_backgroundColor);
+    padding: 4px;
+    border-radius: 5px;
+    transition: .2s ease;
+
+}
+
+@media screen and (width <= 700px) {
+    .searchButton-active {
+        position: absolute;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 10px;
+        padding: 5px 7px;
+        z-index: 999;
+        width: 80vw;
+        img {
+            filter: var(--secondPrimaryTextColor);
+        }
+
+        input {
+            width: fit-content;
+            padding: 0 5px;
+
+            background-color: transparent;
+
+            border: none;
+            outline: none;
+
+            transition: .2s ease-in-out;
+
+            font-size: 20px;
+            color: var(--textColor_in_dark_mode);
+        }
+
+        input::placeholder {
+            width: fit-content;
+            color: var(--textColor_gray_dark);
+            font-size: 1.1rem;
+        }
+    }
+
+    .searchButton-inactive:hover {
+        background-color: black;
+        /*padding: 4px;*/
+        /*border-radius: 10px;*/
+        /*transition: .2s ease;*/
+
+    }
+}

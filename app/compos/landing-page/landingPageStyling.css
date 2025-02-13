@@ -1,0 +1,96 @@
+/*navbar section*/
+nav.landingPageNavBar{
+    background-color: transparent;
+    border: var(--border_tags);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 1% 10%;
+    padding: 4px 10px;
+
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        li{
+            list-style: none;
+            display: flex;
+            font-weight: lighter;
+            cursor: pointer;
+        }
+
+        li#Reanotes{
+            font-size: 2rem;
+            letter-spacing: 1px;
+            font-weight: bolder;
+        }
+    }
+
+    button.importHighlightsButton{
+        margin-right: -125px;
+    }
+
+    button.getStartedButton, button.importHighlightsButton{
+        padding: 2px 6px;
+        border-radius: var(--borderRadiusTags);
+        outline: none;
+        border: 1px solid var(--border_gray_dark);
+        box-shadow: 1px 1px var(--border_gray_dark);
+        cursor: pointer;
+        color: var(--textColor_gray_dark);
+        transition: .2s ease;
+    }
+
+    button.getStartedButton:hover, button.importHighlightsButton:hover{
+        box-shadow: 3px 3px var(--border_gray_dark);
+        border: 2px solid var(--border_gray_dark);
+        transition: .2s ease;
+
+    }
+}
+
+/*second component*/
+div.PC_Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0 50px;
+    margin: 2% 10%;
+
+    div.importNotesContainer, div.shareNotesContainer{
+        background-color: transparent;
+        border-radius: 15px;
+        border: 1px solid var(--border_gray_dark);
+        padding: 20px;
+        height: fit-content;
+        width: 300px;
+        color: var(--textCollor_darkMode_lightMode);
+        box-shadow: var(--shadowing);
+
+        span {
+            display: flex;
+            flex-direction: row;
+            font-size: 1rem;
+            padding-bottom: 30px;
+            color: var(--textColor_In_white_mode);
+            img{
+            }
+        }
+
+        p{
+            text-align: start;
+            line-height: 30px;
+            font-weight: lighter;
+            color: var(--textColor_In_white_mode);
+
+        }
+    }
+}

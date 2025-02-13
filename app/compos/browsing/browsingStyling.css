@@ -1,0 +1,26 @@
+div.browsingContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    a{
+        color: var(--textColor_gray_dark);
+        /*background-color: black;*/
+        font-size: 1.2rem;
+        padding: 0 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: .2s ease;
+        font-weight: normal;
+        letter-spacing: -1.5px;
+
+        img{
+            filter: var(--imgColor_dark_gray)
+        }
+    }
+
+    a:hover{
+        background-color: var(--tag_backgroundColor);
+        transition: .2s ease;
+    }
+}

@@ -1,0 +1,165 @@
+div.folderContainer {
+    position: sticky;
+    top: 5px;
+
+    border-radius: 6px;
+
+    background-color: var(--darkThemeBody);
+    border: var(--border_tags);
+
+    margin: 10px 0;
+    box-shadow: var(--shadowing);
+    z-index: 2;
+
+    list-style: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+
+div.folderContainer li:last-child span {
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+div.folderContainer div.folders-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    div.scrollableFoldersContainer {
+        overflow-x: scroll;
+        scrollbar-width: none;
+        width: 100%;
+        padding: 0 5px;
+
+        div.folders {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            div.link-element-container {
+                border-radius: 5px;
+                margin: 10px 5px;
+                padding: 3px 10px;
+                gap: 5px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    color: var(--textColor_gray_dark);
+                    text-decoration: none;
+                }
+            }
+
+            div.link-element-container:hover {
+                border-radius: 5px;
+                margin: 10px 5px;
+                padding: 3px 10px;
+                gap: 5px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                background-color: var(--activeFoldersBackgroundColor);
+
+                a {
+                    color: var(--textColor_in_dark_mode);
+                    text-decoration: none;
+                }
+            }
+
+            div.link-element-container-active {
+                border-radius: 5px;
+                margin: 10px 5px;
+                padding: 3px 10px;
+                gap: 5px;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                background-color: var(--activeFoldersBackgroundColor);
+
+                a {
+                    color: var(--textColor_in_dark_mode);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    div.foldersFunctionalities {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 15px;
+    }
+
+
+}
+
+
+div.folders-section button.goBackUpButton {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    img {
+        display: block;
+        filter: var(--imgColor_dark_gray);
+    }
+}
+
+div.foldersFunctionalities div.filterIcon img {
+    display: block;
+    filter: var(--imgColor_dark_gray);
+    cursor: pointer;
+}
+
+
+div.filtering-section {
+    color: white;
+}
+
+/* Styling addFolderInputField */
+input#addFolderInputField {
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: var(--tag_backgroundColor);
+    color: var(--textColor_gray_dark);
+    border: none;
+    font-weight: lighter;
+    outline: none;
+    transition: .2s ease;
+}
+
+input#addFolderInputField::placeholder {
+    color: var(--textColor_gray_dark);
+    font-weight: lighter;
+}
+
+
+@media screen and (width <= 700px) {
+    div.folderContainer {
+        position: sticky;
+        top: 10px;
+        border-radius: 10px;
+
+        margin: 10px 0;
+
+        z-index: 2;
+        list-style: none;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: lighter;
+
+
+    }
+}

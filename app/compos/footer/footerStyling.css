@@ -1,0 +1,175 @@
+footer {
+    margin: 10% 0 0 0;
+    padding: 0 10% 5% 10%;
+    color: #ceccc5;
+    background-color: black;
+
+    & div.topLayer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 20vh;
+
+        div.readnotes-logo-name {
+            p {
+                font-weight: lighter;
+                width: 70%;
+            }
+        }
+    }
+}
+
+div.reanotesGeneralInfos-subscribed {
+    h1 {
+        font-size: 2rem;
+        width: 40vw;
+        margin: 15px 0;
+    }
+
+    button.tryReanotesButton {
+        background-color: #151414;
+        color: #ceccc5;
+        padding: 15px 30px;
+        border-radius: var(--borderRadius);
+        letter-spacing: 3px;
+        font-size: 1rem;
+        border: 1px solid #5e5d59;
+        outline: none;
+        cursor: pointer;
+        transition: .2s ease;
+    }
+
+    button.tryReanotesButton:hover {
+        background-color: #303030;
+        transition: .2s ease;
+    }
+}
+
+
+div.bottomLayer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div.availableOnAllPlatforms-section img {
+        filter: var(--imgColor_white);
+    }
+
+    div.availableOnAllPlatforms-section,
+    div.availabilityPlatforms-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        button.applePlatform, button.androidPlatform {
+            img {
+                filter: brightness(0) saturate(100%) invert(92%) sepia(4%) saturate(308%) hue-rotate(9deg) brightness(91%) contrast(87%);
+            }
+
+            color: #ceccc5;
+            background-color: #ae5630;
+        }
+    }
+
+    div.availabilityPlatforms-section button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 20px;
+        border-radius: 6px;
+        border: var(--border);
+        background-color: var(--tag_backgroundColor);
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+img#reanotesIcon {
+    border-radius: var(--borderRadiusRNICON);
+}
+
+@media screen and (width <= 700px) {
+    footer {
+        padding: 5%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: black;
+        color: var(--textColor_in_dark_mode);
+
+
+        & div.topLayer {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            /*justify-content: space-between;*/
+            /*gap: 20rem;*/
+
+            height: 100%;
+
+            div.readnotes-logo-name {
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                flex-direction: column;
+
+                p {
+                    font-weight: lighter;
+                }
+            }
+
+            div.reanotesGeneralInfos-subscribed {
+                width: 100%;
+                h1 {
+                    text-align: start;
+                    margin: 3.5rem 0;
+                    width: 100%;
+
+                }
+
+                button.tryReanotesButton {
+                    width: 100%;
+                }
+            }
+        }
+
+
+        div.bottomLayer {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+
+            div.availableOnAllPlatforms-section {
+            }
+
+            div.availabilityPlatforms-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            div.availabilityPlatforms-section button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                width: 80vw;
+                padding: 10px 20px;
+                border-radius: var(--borderRadius);
+                border: var(--border);
+                cursor: pointer;
+
+            }
+        }
+
+    }
+
+}

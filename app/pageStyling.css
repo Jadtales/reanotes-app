@@ -1,0 +1,96 @@
+div.offers {
+    text-align: center;
+    margin: 5% 0;
+
+    h1 {
+        text-align: center;
+        margin: 1% 0;
+        font-size: 3.5rem;
+        color: var(--textColor);
+    }
+
+    h4 {
+        font-weight: lighter;
+        letter-spacing: 1px;
+        font-size: .9rem;
+    }
+
+    div.reanotesHomePageImg {
+        margin-top: 2%;
+        margin-bottom: -1.5%;
+
+        img {
+            width: 900px;
+            border: 10px solid white;
+            border-radius: 25px;
+            height: 520px;
+        }
+    }
+
+    div.reanotes_readwise_comparison_section {
+        /*margin: 5% 0;*/
+        padding: 1%;
+
+        background-color: var(--backgroundColor_frontnote);
+        border-radius: 20px;
+
+        h1 {
+            font-size: 2rem;
+            color: var(--textColor);
+            font-weight: lighter;
+        }
+
+        div.comparisonTable {
+            margin: 3% 0;
+            display: flex;
+            width: 100%;
+            border-radius: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--darkThemeBody);
+            padding: 20px;
+
+            table {
+                text-align: start;
+
+                thead {
+                    tr {
+                        th {
+                            padding: 10px 30px;
+                            border-right: 1px solid var(--textColor);
+                            border-bottom: 1px solid var(--textColor);
+                            border-collapse: collapse;
+
+                        }
+
+                        th:last-child {
+                            border-right: none;
+                        }
+                    }
+                }
+
+                tbody tr td{
+                    border-right: 1px solid var(--textColor);
+                    border-bottom: 1px solid var(--textColor);
+                    padding: 10px 10px 30px 10px;
+
+                    span{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                td:last-child {
+                    border-right: none;
+                }
+                tr:last-child td{
+                    border-bottom: none;
+                 }
+
+
+            }
+        }
+    }
+}
+
+/*styling phone sized navbar*/

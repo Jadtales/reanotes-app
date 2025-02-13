@@ -1,0 +1,163 @@
+div.reviewingSectionContainer {
+    margin: 1% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+
+    div.test {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        position: fixed;
+        bottom: 2%;
+        left: 1%;
+
+        span {
+            cursor: pointer;
+            color: var(--textColor_gray_dark);
+        }
+    }
+
+    div.listOfContentContainer-largeSize {
+        position: fixed;
+        top: 15px;
+        left: 20px;
+
+
+        div.tableOfContent-largeSize {
+            display: flex;
+            flex-direction: column;
+            /*gap: 1rem;*/
+
+            h1 {
+                font-weight: lighter;
+                margin-bottom: 50px;
+                color: var(--textColor_gray_dark);
+            }
+
+            div.contentList {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                span {
+                    font-weight: lighter;
+                    cursor: pointer;
+                    color: var(--textColor_gray_dark);
+                }
+            }
+
+        }
+    }
+
+
+    /*h1#noteCardTitle {*/
+    /*    text-align: center;*/
+    /*    font-weight: lighter;*/
+    /*    font-size: .2rem;*/
+    /*}*/
+
+    div.noteCardsHighlightsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        div.topLayer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            /*justify-content: start;*/
+            width: 100%;
+
+            h1#noteCardTitle {
+                font-weight: lighter;
+                color: var(--secondPrimaryTextColor);
+                text-align: center;
+                width: 100%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                font-size: clamp(25px, 1vw, 100px);
+            }
+
+            img#goBackToHomePageIcon {
+                filter: var(--imgColor_dark_gray);
+                cursor: pointer;
+                background-color: black;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+
+@media screen and (width <= 1200px) {
+    div.reviewingSectionContainer {
+        margin: 1% 10% 1% 35%;
+        /*margin: 1% 0 0 15%;*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+
+
+        div.listOfContentContainer-largeSize {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+    }
+
+}
+
+@media screen and (width <= 800px) {
+    div.reviewingSectionContainer {
+        margin: 5% 5%;
+
+        div.noteCardsHighlightsContainer {
+            width: 100%;
+            margin: 0 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        div.reviewingSection div.topLayer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 1rem;
+
+            img#viewListOfContentIcon {
+                margin-left: 3px;
+            }
+        }
+    }
+}
+
+div.scrollingFuncsContainer{
+    z-index: 9999;
+}
+
+/*ScrollingFuncs component section*/
+@media screen and (width <= 1200px) {
+    div.scrollingFuncsContainer{
+        position: fixed;
+        left: 91%;
+        top: 2%;
+    }
+}
+
+@media screen and (width <= 800px) {
+    div.noteCardReviewPageContainer{
+        width: 100%;
+    }
+    div.scrollingFuncsContainer{
+        position: fixed;
+        left: 5%;
+        top: 1%;
+    }
+}

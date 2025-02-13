@@ -1,0 +1,30 @@
+
+/* Initially hide the notification by moving it out of view */
+div.warningNotification-inactive {
+    position: fixed;
+    bottom: -50px; /* Start off-screen */
+    left: 50%;
+    transform: translate(-50%);
+    padding: 8px 20px;
+    background-color: var(--tag_backgroundColor);
+    color: black;
+    font-size: 1.3rem;
+    border: 1px solid #ff6363;
+    border-radius: 6px;
+    transition: bottom 0.3s ease-out; /* Slide in animation */
+}
+
+/* Slide the notification up when active */
+div.warningNotification-active {
+    position: fixed;
+    bottom: 15px; /* Move into view */
+    left: 50%;
+    transform: translate(-50%);
+    padding: 8px 20px;
+    background-color: var(--tag_backgroundColor);
+    color: black;
+    font-size: 1.3rem;
+    border: 1px solid #ff6363;
+    border-radius: 6px;
+    transition: bottom 0.3s ease-out; /* Slide-out animation */
+}

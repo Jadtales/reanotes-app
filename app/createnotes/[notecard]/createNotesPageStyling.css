@@ -1,0 +1,15 @@
+div.createNotesComponent {
+    margin: 2% 10%;
+
+    div.cardFooterContainer {
+        div.addNewCardButton:hover {
+            background-color: var(--tag_backgroundColor);
+        }
+    }
+}
+
+@media screen and (width <= 700px) {
+    div.createNotesComponent{
+        margin: 2% 5%;
+    }
+}

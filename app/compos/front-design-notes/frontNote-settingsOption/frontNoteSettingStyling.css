@@ -1,0 +1,138 @@
+.homeContainer {
+    position: relative;
+}
+
+.flashcardSettingsContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.flashcardSettings {
+    cursor: pointer;
+}
+
+button.settingsButton {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 3px 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: .2s ease-out;
+
+    img {
+        filter: var(--imgColor_dark_gray)
+    }
+}
+
+button.settingsButton:hover {
+    background-color: var(--tag_backgroundColor);
+    transition: .2s ease-in;
+}
+
+dialog.frontNoteSettingContainer {
+    background-color: var(--darkThemeBody-darkerGray_black);
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    width: 165px;
+    border-radius: 6px;
+    border: var(--border_tags);
+    z-index: 10;
+    transform: none;
+    outline: none;
+
+    animation: fadeIn .2s;
+
+    ul li {
+        padding: 10px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+
+        img {
+            filter: var(--imgColor_dark_gray);
+        }
+
+        color: var(--textColor_gray_dark);
+    }
+
+    ul li:hover {
+        background-color: #2D2D2DFF;
+        border-radius: 3px;
+        color: var(--textColor_in_dark_mode);
+
+        img {
+            filter: var(--imgColor_white);
+        }
+    }
+
+    ul li:last-child {
+        color: red;
+        border-radius: 8px;
+    }
+
+    ul li:last-child:hover {
+        background-color: #ffe9e9;
+    }
+}
+
+dialog.frontNoteSettingContainer-phoneSize {
+    position: absolute;
+    top: -15px;
+    border: none;
+    height: 185px;
+    padding: 10px 5px;
+    width: 3.09rem;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--backgroundColor_frontnote);
+
+    animation: fadeInPhoneSize .5s;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        left: 0;
+
+        hr{
+            display: none;
+        }
+
+        li {
+            list-style: none;
+
+            img{
+                filter: var(--imgColor_dark_gray);
+            }
+        }
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInPhoneSize {
+    from {
+        opacity: 0;
+        transform: translate(20%, 0);
+    }
+
+    to {
+        opacity: 1;
+    }
+}

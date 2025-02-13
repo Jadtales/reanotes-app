@@ -1,0 +1,58 @@
+div.chosenNotecardContainer {
+    border: var(--border_tags);
+    border-radius: 10px;
+
+    padding: 10px;
+    width: 350px;
+    height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div.header {
+        font-weight: lighter;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h5{
+            color: var(--textColor_gray_dark);
+        }
+
+        a {
+            color: var(--secondPrimaryTextColor);
+        }
+    }
+
+    div.suggestedNote {
+        margin: 0 0;
+        border: none;
+        background-color: var(--backgroundColor_recentVisitedNoteCard);
+
+
+        div.noteInfos{
+            h1{
+                color: var(--textColor_gray_dark);
+            }
+        }
+    }
+}
+
+
+@media screen and (width <= 700px) {
+    div.chosenNotecardContainer {
+        border: var(--border_tags);
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+        height: fit-content;
+
+        div.suggestedNote {
+            margin: 0 0;
+        }
+    }
+
+
+}
+

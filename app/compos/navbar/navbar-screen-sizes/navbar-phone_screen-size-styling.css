@@ -1,0 +1,59 @@
+nav.navbarForPhoneSize {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    width: 85%;
+    height: 50px;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 10px;
+
+    background-color: black;
+    flex-direction: row;
+    z-index: 2;
+
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        img {
+            filter: var(--imgColor_white);
+        }
+
+        color: white;
+        transition: .2s ease-in;
+    }
+
+    button:hover {
+        filter: brightness(0) saturate(100%) invert(15%) sepia(86%) saturate(4097%) hue-rotate(26deg) brightness(97%) contrast(107%);
+        transition: .2s ease;
+    }
+
+    button.current-page {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        img {
+            filter: brightness(0) saturate(100%) invert(15%) sepia(86%) saturate(4097%) hue-rotate(26deg) brightness(97%) contrast(107%);
+        }
+
+        color: white;
+        transition: .2s ease-in;
+    }
+
+    img {
+        filter: var(--imgColor_white);
+    }
+
+    button.addNoteButton-navbarPhoneScreenSize {
+        font-size: 1.5rem;
+    }
+}

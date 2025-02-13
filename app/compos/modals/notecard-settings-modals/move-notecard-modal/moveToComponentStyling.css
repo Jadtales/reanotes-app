@@ -1,0 +1,122 @@
+dialog.MoveToContainer {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    cursor: default;
+    outline: none;
+    animation: fadeIn .5s;
+    border: var(--border_tags);
+
+    div.dialogContainer {
+        display: flex;
+        flex-direction: column;
+
+        min-width: 800px;
+        height: 60vh;
+
+        background-color: var(--darkThemeBody-darkerGray_black);
+        padding: 30px 40px;
+        border-radius: var(--borderRadius);
+
+
+        img {
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            justify-content: right;
+            cursor: pointer;
+            filter: var(--imgColor_dark_gray);
+        }
+
+        div.ModalInstructions {
+            margin: 20px 0;
+
+            h1 {
+                font-weight: normal;
+                color: var(--textColor_gray_dark);
+            }
+
+            p {
+                color: var(--textColor_gray_dark);
+                font-weight: lighter;
+                font-size: .8rem;
+            }
+        }
+
+
+        div.tagsContainer {
+            overflow-y: auto;
+            scrollbar-width: none;
+            flex-grow: 1;
+            padding: 5px;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                flex-wrap: wrap;
+                align-items: start;
+                gap: .8rem;
+                width: 100%;
+
+                li {
+                    list-style: none;
+                    cursor: pointer;
+                    color: var(--textColor_gray_dark);
+                    padding: 4px 6px;
+                    background-color: var(--tag_backgroundColor);
+                    border-radius: 4px;
+                    transition: .2s ease;
+                    border: 1px solid transparent;
+
+                }
+
+                li:hover {
+                    background-color: black;
+                    transition: .2s ease;
+                    color: var(--textColor_in_dark_mode)
+                }
+
+                li.inFolder {
+                    background-color: black;
+                    transition: .2s ease;
+                    color: var(--textColor_in_dark_mode)
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (width <= 750px) {
+    dialog.MoveToContainer {
+        height: 100%;
+        /*width: 100vw;*/
+        width: 100%;
+
+        div.dialogContainer {
+            display: flex;
+            flex-direction: column;
+
+            min-width: auto;
+            height: 100%;
+        }
+
+        div.tagsContainer ul{
+            height: 100%;
+            overflow: scroll;
+            scroll-behavior: smooth;
+        }
+    }
+}
