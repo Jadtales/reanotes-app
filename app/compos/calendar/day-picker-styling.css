@@ -1,0 +1,11 @@
+.navButtons {
+    color: blue
+}
+
+.selectedDayColor, todayDay {
+    color: var(--secondPrimaryTextColor);
+}
+
+.calendarNavButtons{
+    color: #000000;
+}

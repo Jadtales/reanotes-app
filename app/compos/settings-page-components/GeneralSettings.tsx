@@ -56,6 +56,15 @@ export default function GeneralSettingPageComponents(): ReactElement<any> {
                     <option value="Polish">Polish</option>
                 </select>
             </div>
+
+            <div className="languageAdjustment">
+                <h3>Nav Bar</h3>
+                <select name="language"
+                        id="languagesSelection">
+                    <option value="English">Horizontal (at the top)</option>
+                    <option value="Polish">Vertical (on the left)</option>
+                </select>
+            </div>
         </div>)
     )
 }
