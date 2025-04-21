@@ -1,6 +1,6 @@
 'use client'
 
-import {Fragment, ReactElement, useState} from "react";
+import { Fragment, ReactElement, useState } from "react";
 import './settingsPageStyling.css'
 import GoBackToComponent from "@/app/compos/go-back-to-component/GoBackTo-Component";
 import GeneralSettingPageComponents from "@/app/compos/settings-page-components/GeneralSettings";
@@ -9,14 +9,14 @@ export default function SettingsPage(): ReactElement<any> {
     const [chosenSettings, setChosenSettings] = useState<string>('general')
 
     const handleChosenSettings = (setting: string): void => {
-        setChosenSettings(setting)
+        setChosenSettings(setting);
     }
 
 
     return (
 
         <Fragment>
-            <GoBackToComponent margin={'30px 10%'} withText={true} iconSize={'25px'}/>
+            <GoBackToComponent margin={'0 10% 20px 10%'} withText={true} iconSize={'25px'} />
             <div className="settingsPageContainer">
                 <div className="settingsTarget">
                     <h3>Account settings</h3>
@@ -32,7 +32,7 @@ export default function SettingsPage(): ReactElement<any> {
 
                 {/*settings adjustments are based on the settings target*/}
                 {chosenSettings === "general" ?
-                    <GeneralSettingPageComponents/>
+                    <GeneralSettingPageComponents />
                     : (<div className="userProfileAdjustments">
                         <div className="userCredentials">
                             <h3>User credentials</h3>
@@ -42,9 +42,9 @@ export default function SettingsPage(): ReactElement<any> {
 
                             <form action="/toChangeCredentials">
                                 <input type="email"
-                                       defaultValue={"amjadmassaoudw@gmail.com"}
-                                       placeholder="your email."/>
-                                <input type="password" placeholder="your password"/>
+                                    defaultValue={"amjadmassaoudw@gmail.com"}
+                                    placeholder="your email." />
+                                <input type="password" placeholder="your password" />
 
                                 <div className="formButtons">
                                     <button type="submit">Save</button>

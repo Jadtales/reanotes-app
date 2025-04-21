@@ -41,26 +41,26 @@ export default function StatsPage(): ReactElement<any> {
                     <h2>Most viewed Books/Notecards</h2>
 
                     <ShareStatsModal whoShared={'Jadtales'}
-                                     sharedTypeOfContent={'Most viewed Books/Notecards'}
-                                     sharedContent={'e'}/>
+                                    sharedTypeOfContent={'Most viewed Books/Notecards'}
+                                    sharedContent={'e'}/>
 
                 </div>
                 <div className="statsResult">
                     <FrontDesignNoteBrowse bookTitle={'There, there'}
-                                           bookAuthor={'Tommy Orange'}
-                                           notedByUsername={'Jadtales'}/>
+                                        bookAuthor={'Tommy Orange'}
+                                        notedByUsername={'Jadtales'}/>
                     <FrontDesignNoteBrowse bookTitle={'There, there'}
-                                           bookAuthor={'Tommy Orange'}
-                                           notedByUsername={'Jadtales'}/>
+                                            bookAuthor={'Tommy Orange'}
+                                            notedByUsername={'Jadtales'}/>
                     <FrontDesignNoteBrowse bookTitle={'There, there'}
-                                           bookAuthor={'Tommy Orange'}
-                                           notedByUsername={'Jadtales'}/>
+                                            bookAuthor={'Tommy Orange'}
+                                            notedByUsername={'Jadtales'}/>
                     <FrontDesignNoteBrowse bookTitle={'There, there'}
-                                           bookAuthor={'Tommy Orange'}
-                                           notedByUsername={'Jadtales'}/>
+                                            bookAuthor={'Tommy Orange'}
+                                            notedByUsername={'Jadtales'}/>
                     <FrontDesignNoteBrowse bookTitle={'There, there'}
-                                           bookAuthor={'Tommy Orange'}
-                                           notedByUsername={'Jadtales'}/>
+                                            bookAuthor={'Tommy Orange'}
+                                            notedByUsername={'Jadtales'}/>
                 </div>
             </div>
 

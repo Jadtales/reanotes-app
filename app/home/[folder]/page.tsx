@@ -1,8 +1,8 @@
 'use client';
 
-import React, {ReactElement, useState, useEffect, useTransition} from 'react';
-import {usePathname} from "next/navigation";
-import {useRouter} from 'nextjs-toploader/app';
+import React, { ReactElement, useState, useEffect, useTransition } from 'react';
+import { usePathname } from "next/navigation";
+import { useRouter } from 'nextjs-toploader/app';
 import './notesGrid.css';
 
 import HomePageWidgets from '@/app/compos/welcoming-page-components/home-page-widgets';
@@ -16,19 +16,21 @@ import localStoreNotecards, {
     getStoredNotecards
 } from "@/utils/localstorage-utility/localstore-notecards/localstore-notecards";
 import DataLoader from "@/app/compos/data-ui-loader/data-loader";
-import {useMediaQuery} from "react-responsive";
-
+import NotecardsLoader from "@/app/compos/notecards-loader/notecards-loader";
+import SearchInputFieldComponent from '../../compos/navbar/navbar_microComponents/SearchInputFieldComponent';
+import SearchNotecards from '../../compos/search-notecards-home-page/search-notecards';
 
 
 export default function NoteCardsContainerHomePage(): ReactElement {
 
     const [noteCards, setNoteCards] = useState<FrontNotecardInterface[]>([]);
+    const [loadingQuantity, setLoadingQuantity] = useState<number>(12);
+    const [isToLoadNotecards, setIsToLoadNotecards] = useState<boolean>(false);
     const [isLoading, startTransition] = useTransition();
-
-    const pageWidth = useMediaQuery({query: '(width <= 700px)'});
 
     const pathname = usePathname();
     const router = useRouter();
+
 
     const handlePinnedNotecards = (isNotecardPinned: boolean, bookId: string): void => {
 
@@ -71,7 +73,7 @@ export default function NoteCardsContainerHomePage(): ReactElement {
                 });
             }
         }
-    }
+    };
 
     const goToReviewMode = (bookTitle: string, bookId: string): void => {
         const encodedBookTitleUrl = encodeURIComponent(bookTitle);
@@ -107,7 +109,7 @@ export default function NoteCardsContainerHomePage(): ReactElement {
             ...prev,
             ...[...selectedHighlights].map(notecard => notecard)
         ]);
-    }
+    };
 
     // handle notecards filters
     useEffect(() => {
@@ -142,8 +144,8 @@ export default function NoteCardsContainerHomePage(): ReactElement {
 
             // Check if 'Pinned' exists in bookTags (case-insensitive)
             const hasPinnedTag = Array.isArray(notecard.bookTags)
-                ? notecard.bookTags.some(tag => tag.toLowerCase() === 'pinned')
-                : notecard.bookTags.toLowerCase() === 'pinned';
+                && notecard.bookTags.some(tag => tag.toLowerCase() === 'pinned')
+
 
             // If the user is in the 'all' folder, include everything
             if (!tagName || tagName.toLowerCase() === 'all') {
@@ -156,9 +158,6 @@ export default function NoteCardsContainerHomePage(): ReactElement {
                     hasPinnedTag || // Include if 'Pinned' exists
                     notecard.bookTags.some(tag => tag.toLowerCase() === normalizedTagName)
                 );
-            } else if (typeof notecard.bookTags === 'string') {
-                const tag = notecard.bookTags.toLowerCase();
-                return hasPinnedTag || tag === normalizedTagName;
             }
 
             return false; // Fallback for invalid bookTags
@@ -167,6 +166,14 @@ export default function NoteCardsContainerHomePage(): ReactElement {
         // Update state immutably
         setNoteCards(filteredNotecards);
     }, [pathname]);
+
+    useEffect(() => {
+        if (isToLoadNotecards) {
+        }
+
+        if (!isToLoadNotecards) {
+        }
+    }, [isToLoadNotecards]);
 
     // fetch notecards from localstorage
     useEffect(() => {
@@ -179,35 +186,38 @@ export default function NoteCardsContainerHomePage(): ReactElement {
                 setNoteCards(retrievedLocalStoredNotecard);
             }
         })
-    }, [noteCards.length])
+    }, [noteCards.length]);
 
     return (
-            <div className={'homePageContainer'}>
-                <HomePageWidgets username={'Jadtales'}/>
-                <FolderComponent/>
+        <div className={'homePageContainer'}>
+            <SearchNotecards />
 
-                <div className="notes">
-                    {isLoading ? <DataLoader width={'79vw'}/> :
+            <HomePageWidgets username={'Jadtales'} />
+            <FolderComponent />
 
-                        noteCards.map((notecard, index: number) => (
-                            <div key={index} onClick={() => goToReviewMode(notecard.bookTitle, notecard.bookId)}>
-                                <FrontNoteComponent
-                                    key={index}
-                                    bookCredentials={{
-                                        bookId: notecard.bookId,
-                                        bookTitle: notecard.bookTitle,
-                                        bookAuthor: notecard.bookAuthor,
-                                        bookCover: notecard.bookCover,
-                                        bookTags: notecard.bookTags!,
-                                        bookHighlights: notecard.highlights
-                                    }}
-                                    notecardDeletion={handleNotecardDeletion}
-                                    isNotecardToPin={handlePinnedNotecards}
-                                />
-                            </div>
-                        ))}
-                </div>
-                <AddNoteComponentButton getNewSelectedKindleHighlights={handleAddingNewKindleHighlights}/>
+            <div className="notes">
+                {isLoading ? <DataLoader width={'79vw'} /> :
+
+                    noteCards.map((notecard, index: number) => (
+                        <div key={index} onClick={() => goToReviewMode(notecard.bookTitle, notecard.bookId)}>
+                            <FrontNoteComponent
+                                key={index}
+                                bookCredentials={{
+                                    bookId: notecard.bookId,
+                                    bookTitle: notecard.bookTitle,
+                                    bookAuthor: notecard.bookAuthor,
+                                    bookCover: notecard.bookCover,
+                                    bookTags: notecard.bookTags ?? [],
+                                    bookHighlights: notecard.highlights
+                                }}
+                                notecardDeletion={handleNotecardDeletion}
+                                isNotecardToPin={handlePinnedNotecards}
+                            />
+                        </div>
+                    ))}
             </div>
+            {noteCards.length > 9 && <NotecardsLoader isToLoad={setIsToLoadNotecards} />}
+            <AddNoteComponentButton getNewSelectedKindleHighlights={handleAddingNewKindleHighlights} />
+        </div>
     );
 }

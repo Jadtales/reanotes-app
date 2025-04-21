@@ -3,7 +3,7 @@ div.userProfilePageContainer {
     flex-direction: row;
     gap: 5rem;
 
-    margin: 1% 10%;
+    margin: 0 10%;
     height: auto;
 
     color: var(--textColor_gray_dark);

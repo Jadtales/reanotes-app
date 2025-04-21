@@ -28,7 +28,7 @@ export default function UserProfilePage(): ReactElement {
     const pageWidth = useMediaQuery({query: '(width <= 700px)'});
 
     return <Fragment>
-        <GoBackToComponent margin={pageWidth ? '30px 5%' : '30px 10%'} withText={!pageWidth} iconSize={'35px'}/>
+        <GoBackToComponent margin={pageWidth ? '0 5%' : '0 10%'} withText={!pageWidth} iconSize={'35px'}/>
 
         <div className="userProfilePageContainer">
 

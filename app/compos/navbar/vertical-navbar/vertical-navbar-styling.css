@@ -1,0 +1,92 @@
+.vertical-navbar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60px;
+
+    background-color: black;
+    border: var(--border_tags);
+    color: white;
+    position: fixed;
+    /* margin: -2rem 0; */
+    transition: .5s ease;
+    z-index: 3;
+
+    /* border: var(--border_tags); */
+    box-shadow: var(--shadowing);
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: none;
+    border: none;
+    padding: 1rem .2rem;
+
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        left: 10px;
+        height: 97vh;
+
+        div.navbar-top-section-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            div.navigators {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+
+                    img {
+                        filter: var(--imgColor_white);
+                    }
+                }
+            }
+        }
+
+        .navbar-bottom-section-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+
+                img:not(.no-user-avatar) {
+                    filter: var(--imgColor_white);
+                }
+            }
+        }
+    }
+}
+
+.no-user-avatar {
+    border-radius: 100;
+}
+
+
+img.reanotes-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5;
+}
