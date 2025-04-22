@@ -49,7 +49,9 @@ export default function VerticalNavbar(): ReactElement<HTMLDivElement> {
         </div>
 
         <div className="navbar-bottom-section-container">
-          <Image src={ReanotesIcon} alt="Reanotes" width={25} height={25} className={'no-user-avatar'} />
+          <button aria-label='profile' className='user-avatar' type='button' onClick={() => handleNavigationRoutes('/jadtales')}>
+            <Image src={ReanotesIcon} alt="Reanotes" width={25} height={25} className={'no-user-avatar'} />
+          </button>
 
           <SubModalComponent withIcon={true} />
 

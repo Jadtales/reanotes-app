@@ -1,18 +1,18 @@
-import React, {ChangeEvent, ReactElement, useEffect, useState, createContext, useContext} from "react";
+import React, { ChangeEvent, ReactElement, useEffect, useState, createContext, useContext } from "react";
 import Image from "next/image";
 import SearchIcon from "@/public/icons/search-2-line.svg";
-import {usePathname} from "next/navigation";
-import {useRouter} from 'nextjs-toploader/app';
+import { usePathname } from "next/navigation";
+import { useRouter } from 'nextjs-toploader/app';
 
-// import '../navbarStyling.css'
-import './searchInputFieldStyling.css'
-import {useSearchContext} from "@/utils/providers/searchInputFieldProvider";
+import '../navbarStyling.css';
+import './searchInputFieldStyling.css';
+import { useSearchContext } from "@/utils/providers/searchInputFieldProvider";
 
 
 export default function SearchInputFieldComponent(): ReactElement<any> {
 
     const [isSearchInputBarOpen, setIsSearchInputBarOpen] = useState<boolean>(false);
-    const {userSearchedText, setUserSearchedText} = useSearchContext()
+    const { userSearchedText, setUserSearchedText } = useSearchContext()
 
     const pathname = usePathname()
     const router = useRouter()
@@ -33,15 +33,15 @@ export default function SearchInputFieldComponent(): ReactElement<any> {
 
     return (
         <div className={isSearchInputBarOpen ? 'searchButton-active' : 'searchButton-inactive'}
-             onClick={() => router.push('/browse')}>
+            onClick={() => router.push('/browse')}>
 
-            <Image src={SearchIcon} alt="expandProfileSettings"/>
+            <Image src={SearchIcon} alt="expandProfileSettings" />
             <input type="search"
-                   placeholder="Search for notecards, people."
-                   autoFocus
-                   name={'searchBar'}
-                   value={userSearchedText}
-                   onChange={handleUserSearching}/>
+                placeholder="Search for notecards, people."
+                autoFocus
+                name={'searchBar'}
+                value={userSearchedText}
+                onChange={handleUserSearching} />
         </div>
     )
 
