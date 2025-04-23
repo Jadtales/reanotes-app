@@ -1,34 +1,61 @@
-'use client'
+'use client';
 
-import React, { ReactElement, useEffect, useRef,  } from 'react';
 import Image from 'next/image';
-import './search-notecards-styling.css'
-
+import React, { ReactElement, useEffect, useRef } from 'react';
+import './search-notecards-styling.css';
 import SearchIcon from '@/public/icons/search-2-line.svg';
 
-export default function SearchNotecards(): ReactElement<HTMLDivElement> {
-    const inputRef = useRef<HTMLInputElement | null>(null);
+interface ComponentProps {
+  getSearchInputText: (searchText: any) => void;
+}
 
-    useEffect(() => {
-        const handleSearchInputFocus = (event: KeyboardEvent): void => {
-            if(event.altKey && event.key === 's'){
-                event.preventDefault();
+export default function SearchNotecards({
+  getSearchInputText,
+}: ComponentProps): ReactElement<HTMLDivElement> {
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-                inputRef.current?.focus();
-            }
-        };
+  useEffect(() => {
+    const handleSearchInputFocus = (event: KeyboardEvent): void => {
+      if (event.altKey && event.key === 's') {
+        event.preventDefault();
 
-        document.addEventListener('keydown', handleSearchInputFocus);
+        inputRef.current?.focus();
+      }
+    };
 
-        return () => {
-            document.removeEventListener('keydown', handleSearchInputFocus);
-        }
-    }, []);
+    document.addEventListener('keydown', handleSearchInputFocus);
 
-    return (
-        <div className='search-notecards-container'>
-            <Image src={SearchIcon} alt='search' />
-            <input type="search" placeholder='Search for anythings' ref={inputRef} />
-        </div>
-    )
+    return () => {
+      document.removeEventListener('keydown', handleSearchInputFocus);
+    };
+  }, []);
+
+  const debounce = (func: Function, delay: number) => {
+    let timer: NodeJS.Timeout;
+    return function (...args: any[]) {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    getSearchInputText(event.target.value);
+  };
+
+  const debouncedHandleInputChange = React.useCallback(
+    debounce(handleInputChange, 500),
+    []
+  );
+
+  return (
+    <div className='search-notecards-container'>
+      <Image src={SearchIcon} alt='search' />
+      <input
+        type='search'
+        placeholder='Search for anythings'
+        ref={inputRef}
+        onChange={(e) => debouncedHandleInputChange(e)}
+      />
+    </div>
+  );
 }
