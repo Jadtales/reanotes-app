@@ -1,135 +1,131 @@
 div.browsePage {
-    h2 {
-        color: var(--textColor_gray_dark);
-        font-weight: normal;
-    }
+  h2 {
+    color: var(--textColor_gray_dark);
+    font-weight: normal;
+  }
 }
 
 div.browsePage,
 div.browsePage-searching {
-    margin: 4% 10%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+  margin: 4% 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 
-    h2 {
-        font-weight: normal;
-        color: var(--textColor_gray_dark);
-    }
+  h2 {
+    font-weight: normal;
+    color: var(--textColor_gray_dark);
+  }
 
-    div.searchedHighlights-components, div.searchedPeople-profiles {
-        color: var(--textColor_gray_dark);
-        margin: 1% 0;
-        height: 50vh;
-    }
+  div.searchedHighlights-components,
+  div.searchedPeople-profiles {
+    color: var(--textColor_gray_dark);
+    margin: 1% 0;
+    height: 50vh;
+  }
 }
-
 
 div.popularNotes,
 div.popularByGenre,
 div.recommendationsBasedOnFlavour {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gapNotes);
+  width: 100%;
+
+  overflow-x: scroll;
+  scrollbar-width: none;
+  border-radius: var(--borderRadiusNote);
+}
+
+div.browsePage {
+  div.browsing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10% -12.5% 0 -12.5%;
+    background-color: black;
+
+    div.heading {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+
+      background: linear-gradient(black 20%, rgba(255, 255, 255, 0));
+      height: 200px;
+      color: var(--textColor_in_dark_mode);
+
+      h2.exploreHeading {
+        margin: 1rem;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bolder;
+      }
+    }
+
+    div.infiniteScrollingNotecards {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+}
+
+@media screen and (width <= 700px) {
+  div.browsePage,
+  div.browsePage-searching {
+    margin: 4% 5%;
+  }
+
+  div.popularNotes,
+  div.popularByGenre,
+  div.recommendationsBasedOnFlavour {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: var(--gapNotes);
     width: 100%;
 
     overflow-x: scroll;
     scrollbar-width: none;
     border-radius: var(--borderRadiusNote);
+
+    h2 {
+      font-size: 0.5rem;
+    }
+  }
+
+  div.recommendationsBasedOnFlavour-section,
+  div.popularNotes-section,
+  div.popularByGenre-section {
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  div.browsePage div.browsing-section {
+    margin: 10% -5%;
+
+    div.heading {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+
+      background: linear-gradient(black 20%, rgba(255, 255, 255, 0));
+      height: 200px;
+      color: var(--textColor_in_dark_mode);
+
+      h2.exploreHeading {
+        margin: 2% 5%;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bolder;
+      }
+    }
+  }
 }
-
-div.browsePage {
-
-    div.browsing-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 10% -12.5% 0 -12.5%;
-        background-color: black;
-
-
-        div.heading {
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 2;
-
-            background: linear-gradient(black 20%, rgba(255, 255, 255, 0));
-            height: 200px;
-            color: var(--textColor_in_dark_mode);
-
-            h2.exploreHeading {
-                margin: 1rem;
-                text-align: center;
-                font-size: 1.8rem;
-                font-weight: bolder;
-            }
-        }
-
-        div.infiniteScrollingNotecards {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
-        }
-    }
-}
-
-
-@media screen and (width <= 700px) {
-    div.browsePage,
-    div.browsePage-searching {
-        margin: 4% 5%;
-    }
-
-    div.popularNotes,
-    div.popularByGenre,
-    div.recommendationsBasedOnFlavour {
-        display: flex;
-        flex-direction: row;
-        gap: var(--gapNotes);
-        width: 100%;
-
-        overflow-x: scroll;
-        scrollbar-width: none;
-        border-radius: var(--borderRadiusNote);
-
-        h2{
-            font-size: .5rem    ;
-        }
-    }
-
-    div.recommendationsBasedOnFlavour-section,
-    div.popularNotes-section,
-    div.popularByGenre-section {
-        h2{
-            font-size: 1rem;
-        }
-    }
-
-    div.browsePage div.browsing-section{
-        margin: 10% -5%;
-
-        div.heading {
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 2;
-
-            background: linear-gradient(black 20%, rgba(255, 255, 255, 0));
-            height: 200px;
-            color: var(--textColor_in_dark_mode);
-
-            h2.exploreHeading {
-                margin: 2% 5%;
-                text-align: center;
-                font-size: 1.2rem;
-                font-weight: bolder;
-            }
-        }
-    }
-}
-

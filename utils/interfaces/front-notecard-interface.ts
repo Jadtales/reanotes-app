@@ -6,7 +6,7 @@ import {FilterNotecardsInterface} from "@/utils/interfaces/filter-notecards-inte
 // for Notecard component
 export default interface FrontNotecardInterface extends HighlightsInterface, FilterNotecardsInterface {
     bookCover?: string;
-    bookTags?: string | string[];
+    bookTags?: string[];
 
 }
 
@@ -16,7 +16,7 @@ export interface BookCredentialsInterface {
         bookAuthor: string;
         bookId: string;
         bookCover?: string | StaticImageData;
-        bookTags: string[] | string;
+        bookTags: string[];
 
         bookHighlights?: {
             highlightKey: number,

@@ -1,203 +1,201 @@
 div.settingsPageContainer {
-    background-color: var(--darkTheme_componentsBackgroundColor);
-    color: var(--textColor_in_dark_mode);
+  background-color: var(--darkTheme_componentsBackgroundColor);
+  color: var(--textColor_in_dark_mode);
 
-    margin: 0 10%;
-    padding: 1rem;
-    height: 50vh;
+  margin: 0 15%;
+  padding: 1rem;
+  height: 50vh;
 
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    border-radius: var(--borderRadiusNote);
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  border-radius: var(--borderRadiusNote);
 }
 
 div.settingsPageContainer div.settingsTarget {
-    min-width: 210px;
+  min-width: 210px;
 }
 
 div.settingsPageContainer ul li {
-    list-style: none;
-    margin: 10px 0;
-    padding: 6px;
-    cursor: pointer;
+  list-style: none;
+  margin: 10px 0;
+  padding: 6px;
+  cursor: pointer;
 }
 
 ul li.li-active {
-    list-style: none;
-    margin: 10px 0;
-    padding: 6px;
-    cursor: pointer;
-    background-color: var(--thirdPrimaryTextColor);
-    width: fit-content;
-    border-radius: var(--borderRadius);
+  list-style: none;
+  margin: 10px 0;
+  padding: 6px;
+  cursor: pointer;
+  background-color: var(--thirdPrimaryTextColor);
+  width: fit-content;
+  border-radius: var(--borderRadius);
 }
-
 
 div.settingsPageContainer h3 {
-    color: #ababab;
-    margin-bottom: 10px;
-    padding: 6px;
+  color: #ababab;
+  margin-bottom: 10px;
+  padding: 6px;
 }
 
-select#themeAppearance, select#languagesSelection {
-    padding: 6px 10px;
-    border-radius: 5px;
+select#themeAppearance,
+select#languagesSelection {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #282929ff;
+  color: white;
+
+  cursor: pointer;
+
+  option {
     border: none;
     outline: none;
-    background-color: #282929FF;
-    color: white;
-
-    cursor: pointer;
-
-    option {
-        border: none;
-        outline: none;
-        padding: 10px;
-    }
+    padding: 10px;
+  }
 }
 
 div.settingsTarget {
-    /*background-color: #282929FF;*/
-    padding: 1rem;
-    border-radius: var(--borderRadiusNote);
+  /*background-color: #282929FF;*/
+  padding: 1rem;
+  border-radius: var(--borderRadiusNote);
 }
 
 .settingsAdjustments-generalSettings,
 .userProfileAdjustments {
-    padding: 1rem;
-    width: 100%;
+  padding: 1rem;
+  width: 100%;
 
-    div {
-        margin-bottom: 50px;
-    }
+  div {
+    margin-bottom: 50px;
+  }
 }
 
-div.appearanceAdjustments, div.languageAdjustment {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /*align-items: center;*/
+div.appearanceAdjustments,
+div.languageAdjustment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*align-items: center;*/
 }
 
 div.userProfileAdjustments .userCredentials {
-    h2 {
-        margin-bottom: 30px;
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      padding: 10px 15px;
+      width: 235px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+
+      border-radius: var(--borderRadius);
+      outline: none;
+      border: none;
+
+      background-color: #282929ff;
+      color: white;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-
-        input {
-            padding: 10px 15px;
-            width: 235px;
-            font-size: 1rem;
-            margin-bottom: 10px;
-
-            border-radius: var(--borderRadius);
-            outline: none;
-            border: none;
-
-            background-color: #282929FF;
-            color: white;
-        }
-
-        input::placeholder {
-            color: white;
-        }
-
-        div.formButtons {
-            display: flex;
-            flex-direction: row;
-
-            button {
-                background-color: #282929FF;
-                color: white;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                padding: 8px 34px;
-                font-size: 1rem;
-                margin-right: 10px;
-                border-radius: var(--borderRadius);
-            }
-        }
-
+    input::placeholder {
+      color: white;
     }
+
+    div.formButtons {
+      display: flex;
+      flex-direction: row;
+
+      button {
+        background-color: #282929ff;
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 8px 34px;
+        font-size: 1rem;
+        margin-right: 10px;
+        border-radius: var(--borderRadius);
+      }
+    }
+  }
 }
 
-
 .settingsTargetLi-active {
-    background-color: var(--thirdPrimaryTextColor);
-    color: black;
-    border-radius: 10px;
-    width: fit-content;
+  background-color: var(--thirdPrimaryTextColor);
+  color: black;
+  border-radius: 10px;
+  width: fit-content;
 }
 
 @media screen and (width <= 700px) {
-    div.settingsPageContainer {
-        background-color: var(--darkTheme_componentsBackgroundColor);
+  div.settingsPageContainer {
+    background-color: var(--darkTheme_componentsBackgroundColor);
+    color: white;
+
+    margin: 2% 10%;
+    padding: 1rem;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-radius: var(--borderRadiusNote);
+
+    div.settingsTarget {
+      min-width: 210px;
+    }
+  }
+
+  div.userProfileAdjustments .userCredentials {
+    h2 {
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 10px 15px;
+        width: 235px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+
+        border-radius: var(--borderRadius);
+        outline: none;
+        border: none;
+
+        background-color: #282929ff;
         color: white;
+      }
 
-        margin: 2% 10%;
-        padding: 1rem;
-        height: fit-content;
+      input::placeholder {
+        color: white;
+      }
 
+      div.formButtons {
         display: flex;
-        flex-direction: column;
-        gap: 50px;
-        border-radius: var(--borderRadiusNote);
+        flex-direction: row;
 
-        div.settingsTarget {
-            min-width: 210px;
+        button {
+          background-color: #282929ff;
+          color: white;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 8px 34px;
+          font-size: 1rem;
+          margin-right: 10px;
+          border-radius: var(--borderRadius);
         }
+      }
     }
-
-    div.userProfileAdjustments .userCredentials {
-        h2 {
-            margin-bottom: 30px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-
-            input {
-                padding: 10px 15px;
-                width: 235px;
-                font-size: 1rem;
-                margin-bottom: 10px;
-
-                border-radius: var(--borderRadius);
-                outline: none;
-                border: none;
-
-                background-color: #282929FF;
-                color: white;
-            }
-
-            input::placeholder {
-                color: white;
-            }
-
-            div.formButtons {
-                display: flex;
-                flex-direction: row;
-
-                button {
-                    background-color: #282929FF;
-                    color: white;
-                    border: none;
-                    outline: none;
-                    cursor: pointer;
-                    padding: 8px 34px;
-                    font-size: 1rem;
-                    margin-right: 10px;
-                    border-radius: var(--borderRadius);
-                }
-            }
-
-        }
-    }
+  }
 }

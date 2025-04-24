@@ -19,8 +19,8 @@ import FolderTransferIcon from "@/public/icons/frontNoteSetting-icons/folder-tra
 interface ComponentProps {
     isPhoneSize: boolean;
     notecardCredentials: {
-        bookId: string | number;
-        bookTags: string[] | string;
+        bookId?: string | number;
+        bookTags: string[];
     };
 }
 
@@ -34,13 +34,12 @@ export default function MoveToFolderModal({
                                           }: ComponentProps): ReactElement<HTMLDivElement | HTMLLIElement> | null {
 
     const [currentNotecardTags, setCurrentNotecardTags] = useState<notecardCredentialsInterface>();
+
     const moveToButtonRef = useRef<HTMLDialogElement>(null);
 
     const cntx = useContext(FoldersStateManagerContext);
 
-    const handleDialogOpening = (event: ReactMouseEvent): void | number => {
-
-
+    const handleDialogOpening = (): void | number => {
         const isModalOpen = moveToButtonRef.current;
 
         if (!isModalOpen?.open) {
@@ -51,31 +50,38 @@ export default function MoveToFolderModal({
         }
     };
 
-
     const handleNotecardTagsUpdate = (tag: string): void => {
         // Capitalize tag name
-        const capitalizedTagName = tag.at(0)?.toUpperCase() + tag.slice(1);
-        const isTagInBookTags = currentNotecardTags?.bookTags && currentNotecardTags?.bookTags.includes(capitalizedTagName);
-
+        // const capitalizedTagName = tag.at(0)?.toUpperCase() + tag.slice(1);
+        // const isTagInBookTags = currentNotecardTags?.bookTags && currentNotecardTags?.bookTags.includes(capitalizedTagName);
+        //
+        // setCurrentNotecardTags((prevState) => {
+        //     return {
+        //         ...prevState,
+        //         bookTags: Array.isArray(prevState?.bookTags) && isTagInBookTags ?
+        //             prevState?.bookTags.filter(availableTag => availableTag !== capitalizedTagName) :
+        //             Array.isArray(prevState?.bookTags) && !isTagInBookTags ?
+        //                 [...prevState?.bookTags, capitalizedTagName] : prevState?.bookTags
+        //     }
+        // })
+        //
         setCurrentNotecardTags((prevState) => {
             return {
                 ...prevState,
-                bookTags: Array.isArray(prevState?.bookTags) && isTagInBookTags ?
-                    prevState?.bookTags.filter(availableTag => availableTag !== capitalizedTagName) :
-                    Array.isArray(prevState?.bookTags) && !isTagInBookTags ?
-                        [...prevState?.bookTags, capitalizedTagName] : prevState?.bookTags
+                bookTags: prevState?.bookTags.push(tag)
             }
-        })
+        });
+
+        console.log(notecardCredentials)
     };
 
-    setTimeout(() => console.log(currentNotecardTags), 100)
-
-    // Ensure bookTags is always an array
+    // setTimeout(() => console.log(currentNotecardTags), 100)
 
     // todo: update notecard's tags if removed or added to a folder
     useEffect(() => {
 
-    }, []);
+
+    }, [notecardCredentials]);
 
     return (
         <Fragment>

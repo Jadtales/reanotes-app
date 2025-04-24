@@ -10,7 +10,6 @@ import React, {
   useMemo,
 } from 'react';
 import './notesGrid.css';
-import SearchInputFieldComponent from '../../compos/navbar/navbar_microComponents/SearchInputFieldComponent';
 import SearchNotecards from '../../compos/search-notecards-home-page/search-notecards';
 import AddNoteComponentButton from '@/app/compos/add-note-button-Compo/AddNoteButtonComponent';
 import DataLoader from '@/app/compos/data-ui-loader/data-loader';

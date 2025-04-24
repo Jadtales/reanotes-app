@@ -2,10 +2,16 @@
 import React, { Fragment, ReactElement, useRef, useState } from 'react';
 import Image from 'next/image';
 import './subModalStyling.css';
+import PremiumIcon from '@/public/icons/lock-star-line.svg';
 
 import ClosingIcon from '@/public/icons/notesIcons/close-line.svg';
 
-export default function SubModalComponent(): ReactElement<any> | null {
+interface Props {
+  withIcon?: boolean;
+}
+
+export default function SubModalComponent({ withIcon = false }: Props): ReactElement<any> | null {
+
   const [userBillingMethod, setUserBillingMethod] = useState<string>('monthly');
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -26,7 +32,7 @@ export default function SubModalComponent(): ReactElement<any> | null {
   return (
     <Fragment>
       <button onClick={handleDialogOpening} className={'getPremiumButton'}>
-        Get Premium
+        {withIcon ? <Image src={PremiumIcon} alt='Premium-button' /> : 'Get Premium'}
       </button>
 
       <dialog className="subscriptionModalContainer" ref={modalRef}>

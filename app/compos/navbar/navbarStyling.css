@@ -207,7 +207,7 @@ div.notificationsCenter-active {
 
         img {
             cursor: pointer;
-            filter: brightness(0) saturate(100%) invert(92%) sepia(4%) saturate(308%) hue-rotate(9deg) brightness(91%) contrast(87%);
+            /*filter: brightness(0) saturate(100%) invert(92%) sepia(4%) saturate(308%) hue-rotate(9deg) brightness(91%) contrast(87%);*/
         }
 
         div.collapseNotificationsCenter {

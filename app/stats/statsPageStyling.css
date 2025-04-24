@@ -1,69 +1,68 @@
 div.statsPageContainer {
-    margin: 0 10.5%;
+  margin: 0 15%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
 
-    h2 {
+  h2 {
+    gap: 1rem;
+    margin: 15px 2px;
+    letter-spacing: 1px;
+    color: var(--textColor_gray_dark);
+    font-weight: normal;
+  }
 
-        gap: 1rem;
-        margin: 15px 2px;
-        letter-spacing: 1px;
-        color: var(--textColor_gray_dark);
-        font-weight: normal;
+  div.userOverviewStats {
+    div.statsResult {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: stretch;
+      flex-wrap: wrap;
     }
+  }
 
-    div.userOverviewStats {
-        div.statsResult {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            justify-content: stretch;
-            flex-wrap: wrap;
-        }
+  div.dailyReviews {
+    div.heatmap {
+      /*overflow-x: scroll;*/
     }
+  }
 
-    div.dailyReviews{
-        div.heatmap{
-            /*overflow-x: scroll;*/
-        }
+  div.mostViewedBooks {
+    div.header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+
+      button.shareButtonIcon img {
+        filter: var(--imgColor_dark_gray);
+      }
+
+      div.shareStatsIcon_container {
+        display: flex;
+        cursor: pointer;
+      }
     }
+    div.statsResult {
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 1rem;
 
-    div.mostViewedBooks{
-        div.header{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: .5rem;
-
-            button.shareButtonIcon img{
-                filter: var(--imgColor_dark_gray);
-            }
-
-            div.shareStatsIcon_container{
-                display: flex;
-                cursor: pointer;
-            }
-        }
-        div.statsResult{
-            display: flex;
-            flex-direction: row;
-            justify-content: stretch;
-            flex-wrap: wrap;
-            width: 100%;
-            gap: 1rem;
-
-            div.suggestedNote{
-                margin: 0 0;
-            }
-        }
+      div.suggestedNote {
+        margin: 0 0;
+      }
     }
+  }
 }
 
-@media screen and (width <= 700px){
-    div.statsPageContainer {
-        margin: 4% 5%;
-    }
+@media screen and (width <= 700px) {
+  div.statsPageContainer {
+    margin: 4% 5%;
+  }
 }
