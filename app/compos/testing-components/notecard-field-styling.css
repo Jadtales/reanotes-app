@@ -26,3 +26,8 @@ div#container *:focus {
 div#container ol li[data-list='bullet'] {
   list-style-type: disc;
 }
+
+div#container ol {
+  padding-left: 30px;
+  margin: 12px 0;
+}
