@@ -1,10 +1,8 @@
 div#welcomingCompoContainer {
-    margin: 2rem 0;
-
     h1.greeting {
+        margin-bottom: 20px;
         font-size: 2rem;
         font-weight: lighter;
-        margin: 20px 5px;
         color: var(--textColor_gray_dark);
 
         span {
@@ -37,8 +35,8 @@ div#welcomingCompoContainer {
 
             div{
                 color: var(--textCollor_darkMode_lightMode);
-                height: 100vh;
-                margin-top: 25%;
+                /*height: 100vh;*/
+                /*margin-top: 25%;*/
                 font-weight: lighter;
                 font-size: 13px;
             }

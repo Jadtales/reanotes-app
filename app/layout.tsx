@@ -6,6 +6,9 @@ import Navbar from '@/app/compos/navbar/Navbar';
 import NotificationUserProfileNavbar from '@/app/compos/navbar/navbar-screen-sizes/NotificationUserProfileNavbar';
 import SearchInputFieldProvider from '@/utils/providers/searchInputFieldProvider';
 import './globals.css';
+import AddNoteComponentButton from './compos/add-note-button-Compo/AddNoteButtonComponent';
+import NavbarUserProfile from './compos/navbar/navbar_microComponents/navbar-user-profile';
+import ReanotesNavbarIcon from './compos/navbar/reanotes-icon/reanotes-navbar-icon';
 import VerticalNavbar from './compos/navbar/vertical-navbar/vertical-navbar';
 import FoldersStateManagerContext from '@/app/wide-state-management/FoldersState';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -32,10 +35,13 @@ export const existingFolders: string[] = ['poetry', 'fiction'];
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
   // todo: implement user authentication check
+
   // const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(true);
+  const [isReanotesNavbarClicked, setIsReanotesNavbarClicked] =
+    useState<boolean>(false);
   const [theme, setTheme] = useState('');
 
-  const windowWidth = useMediaQuery('(width <= 700px)');
+  const isInPhoneSize = useMediaQuery('(width <= 700px)');
 
   const pathname = usePathname();
   // const router = useRouter();
@@ -95,20 +101,41 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
               <QueryClientProvider client={queryClient}>
                 {!isHighlightsReviewPage && (
                   <>
-                    {windowWidth && <NotificationUserProfileNavbar />}
-                    {/* {isInLandingPage && !windowWidth && <Navbar/>} */}
+                    {/* {isInPhoneSize && (
+                      <NavbarUserProfile
+                        phoneScreenSize={true}
+                        userProfileWidth={35}
+                      />
+                    )} */}
 
-                    {/*{windowWidth && <NavbarPhoneScreenSize/>}*/}
+                    {isInPhoneSize && (
+                      <ReanotesNavbarIcon
+                        getIsReanotesButtonClicked={setIsReanotesNavbarClicked}
+                      />
+                    )}
+                    {/* {isInLandingPage && !isInPhoneSize && <Navbar />} */}
                   </>
                 )}
-                {!isHighlightsReviewPage && pathname.length > 1 && (
-                  <VerticalNavbar />
-                )}
+                {!isHighlightsReviewPage &&
+                  pathname.length > 1 &&
+                  !isInPhoneSize && (
+                    <VerticalNavbar
+                      getIsReanotesButtonClicked={setIsReanotesNavbarClicked}
+                    />
+                  )}
+
+                {isInPhoneSize &&
+                  isReanotesNavbarClicked &&
+                  pathname.length > 1 && (
+                    <VerticalNavbar
+                      getIsReanotesButtonClicked={setIsReanotesNavbarClicked}
+                    />
+                  )}
+
                 <div style={{ padding: '2rem 0' }}>{children}</div>
               </QueryClientProvider>
             </SearchInputFieldProvider>
           </FoldersStateManagerContext>
-
           {!isHighlightsReviewPage && <Footer />}
         </ThemeProvider>
       </body>

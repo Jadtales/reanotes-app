@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import './folder-styling.css';
 
-import AddFolderComponent from '@/app/compos/folders-component/FoldersSubComponents/AddFoldersComponent';
+import AddFolderComponent from '@/app/compos/folders-component/FoldersSubComponents/add-folder-compo';
 import filterIcon from '@/public/icons/filter-3-line.svg';
 import GoUpIcon from '@/public/icons/notesIcons/arrow-up-line.svg';
 import FilterNotecardsComponent from '@/app/compos/filter-functionality/FilterNotecardsComponent';
@@ -16,8 +16,6 @@ import FolderElement from "@/app/compos/folders-component/folder-element/folder-
 export default function FolderComponent(): ReactElement<HTMLDivElement> {
     const [isFilterActive, setFilter] = useState<boolean>(false);
     const folders = useContext(FoldersStateManagerContext);
-
-
 
     // Set the current folder based on the pathname or default to the first folder
     const handleFilterButtonClick = (): void => {
@@ -84,7 +82,7 @@ export default function FolderComponent(): ReactElement<HTMLDivElement> {
                         </div>
                     </div>
                     <div className="foldersFunctionalities">
-                        <button className="goBackUpButton" onClick={handleGoingUpBack}>
+                        <button aria-label='scroll-up' className="goBackUpButton" onClick={handleGoingUpBack}>
                             <Image src={GoUpIcon} alt={'goBackToTop'}/>
                         </button>
                         <div className={'filterIcon'} onClick={() => handleFilterButtonClick()}>

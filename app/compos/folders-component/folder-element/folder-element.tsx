@@ -1,6 +1,8 @@
+'use client'
+
 import Link from "next/link";
 import React, {Fragment, ReactElement, useContext, useState} from "react";
-import DeleteFolderElementButton from "@/app/compos/utility-components/delete-element-button/delete-folder-element-button";
+import DeleteFolderElementButtonModal from "@/app/compos/utility-components/delete-element-button/delete-folder-element-button";
 import FoldersStateManagerContext from "@/app/wide-state-management/FoldersState";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 
@@ -12,14 +14,22 @@ interface ComponentProps {
 export default function FolderElement({folder}: ComponentProps): ReactElement<HTMLDivElement> {
     const [isFolderHovered, setIsFolderHovered] = useState<boolean>(false);
 
+    const router = useRouter();
+    const pathname = usePathname();
 
     // todo: handle folder deletion in the db
     const handleFolderDeletionClick = (isClicked: boolean = false, folder: string) => {
+        if(isClicked && pathname.endsWith(folder)){
+            
+            console.log('not in')
+
+            router.push('/home/all');
+        }
+
+        if(isClicked) {
+            
+        }
     }
-
-
-    const router = useRouter();
-    const pathname = usePathname();
 
     const currentFolderUrl = decodeURIComponent(pathname.split("/").at(-1)!);
 
@@ -38,6 +48,6 @@ export default function FolderElement({folder}: ComponentProps): ReactElement<HT
             #{folder.charAt(0).toUpperCase() + folder.slice(1)}
         </Link>
         {isFolderHovered && folder !== 'all' &&
-            <DeleteFolderElementButton isDeletionButtonClicked={handleFolderDeletionClick} folderName={folder}/>}
+            <DeleteFolderElementButtonModal isDeletionButtonClicked={handleFolderDeletionClick} folderName={folder}/>}
     </div>
 }

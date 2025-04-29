@@ -219,6 +219,7 @@ export default function NoteCardsContainerHomePage(): ReactElement {
       <SearchNotecards getSearchInputText={setSearchedNotecard} />
 
       <HomePageWidgets username={'Jadtales'} />
+
       <FolderComponent />
 
       <div className='notes'>
@@ -247,9 +248,11 @@ export default function NoteCardsContainerHomePage(): ReactElement {
       {noteCards.length > 9 && (
         <NotecardsLoader isToLoad={setIsToLoadNotecards} />
       )}
-      <AddNoteComponentButton
-        getNewSelectedKindleHighlights={handleAddingNewKindleHighlights}
-      />
+      <div style={{ backgroundColor: 'white' }}>
+        <AddNoteComponentButton
+          getNewSelectedKindleHighlights={handleAddingNewKindleHighlights}
+        />
+      </div>
     </div>
   );
 }

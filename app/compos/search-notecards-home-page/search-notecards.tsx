@@ -49,7 +49,7 @@ export default function SearchNotecards({
 
   return (
     <div className='search-notecards-container'>
-      <Image src={SearchIcon} alt='search' />
+      <Image src={SearchIcon} alt='search' className='search-notecards-icon' />
       <input
         type='search'
         placeholder='Search for anythings'

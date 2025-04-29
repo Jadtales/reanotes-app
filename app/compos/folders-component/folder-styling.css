@@ -40,7 +40,7 @@ div.folderContainer div.folders-section {
             display: flex;
             flex-direction: row;
             align-items: center;
-
+            gap: 10px;
             div.link-element-container {
                 border-radius: 5px;
                 margin: 10px 5px;
@@ -59,8 +59,8 @@ div.folderContainer div.folders-section {
 
             div.link-element-container:hover {
                 border-radius: 5px;
-                margin: 10px 5px;
-                padding: 3px 10px;
+                /* margin: 10px 5px; */
+                padding: 3px 4px;
                 gap: 5px;
                 display: flex;
                 flex-direction: row;
@@ -76,8 +76,8 @@ div.folderContainer div.folders-section {
 
             div.link-element-container-active {
                 border-radius: 5px;
-                margin: 10px 5px;
-                padding: 3px 10px;
+                /* margin: 10px 5px; */
+                padding: 3px 4px;
                 gap: 5px;
 
                 display: flex;

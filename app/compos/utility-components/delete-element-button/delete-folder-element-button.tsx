@@ -1,7 +1,5 @@
 import {Fragment, MouseEvent as ReactMouseEvent, ReactElement, useRef, useState} from "react";
 
-import DeleteIcon from '@/public/icons/notesIcons/close-line.svg'
-import Image from "next/image";
 import {capitalize} from "@/utils/helper-functions/string-type-helper-functions";
 
 interface ComponentProps {
@@ -9,7 +7,7 @@ interface ComponentProps {
     folderName: string;
 }
 
-export default function DeleteFolderElementButton({
+export default function DeleteFolderElementButtonModal({
                                                 isDeletionButtonClicked,
                                                 folderName
                                             }: ComponentProps): ReactElement<HTMLButtonElement> {
@@ -54,11 +52,11 @@ export default function DeleteFolderElementButton({
                 fontSize: '1.2rem',
                 color: 'var(--textCollor_darkMode_lightMode)',
                 fontWeight: 'normal'
-            }}>Are you sure about deleting {capitalize(folderName)} Folder.
+            }}>Are you sure about deleting {capitalize(folderName)} folder.
             </div>
             <div className="chosenButtons" style={{display: 'flex', gap: '5px', justifyContent: 'end'}}>
 
-                <button onClick={handleDeletion} style={{
+                <button aria-label='delete-folder-button' onClick={handleDeletion} style={{
                     padding: '6px 10px',
                     border: 'none',
                     borderRadius: '4px',
@@ -69,15 +67,19 @@ export default function DeleteFolderElementButton({
                 }}>Delete
                 </button>
 
-                <button onClick={handleModalToggling} style={{
-                    padding: '6px 10px',
-                    border: 'none',
-                    borderRadius: '4px',
-                    outline: 'none',
-                    color: 'var(--textColor_in_dark_mode)',
-                    cursor: 'pointer',
-                    backgroundColor: "black"
-                }}>Cancel
+                <button 
+                    aria-label='cancel-folder-button' 
+                    onClick={handleModalToggling} 
+                    style={{
+                        padding: '6px 10px',
+                        border: 'none',
+                        borderRadius: '4px',
+                        outline: 'none',
+                        color: 'var(--textColor_in_dark_mode)',
+                        cursor: 'pointer',
+                        backgroundColor: "black"
+                    }}
+                >Cancel
                 </button>
             </div>
         </dialog>

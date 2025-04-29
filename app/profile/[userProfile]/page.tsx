@@ -14,7 +14,7 @@ import InstagramIcon from '@/public/icons/socialsIcons/instagram-line.svg';
 // imported icons
 import TwitterIcon from '@/public/icons/socialsIcons/twitter-x-line.svg';
 import RetrievedUserCredentialsInterface from '@/utils/interfaces/user-credentials-interface';
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from 'usehooks-ts';
 
 export default function UserProfilePage(): ReactElement {
   const [
@@ -22,7 +22,7 @@ export default function UserProfilePage(): ReactElement {
     setRetrievedUserCredentialsInterface,
   ] = useState<RetrievedUserCredentialsInterface>();
 
-  const pageWidth = useMediaQuery({ query: '(width <= 700px)' });
+  const pageWidth = useMediaQuery('(width <= 700px)');
 
   return (
     <Fragment>

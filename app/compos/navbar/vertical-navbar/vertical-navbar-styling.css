@@ -38,6 +38,17 @@
       align-items: center;
       gap: 1rem;
 
+      button.vertical-navbar-collapse-button {
+        background-color: transparent;
+        display: flex;
+        border: none;
+        outline: none;
+
+        img {
+          filter: var(--imgColor_white);
+        }
+      }
+
       div.navigators {
         display: flex;
         flex-direction: column;
@@ -54,6 +65,10 @@
           img {
             filter: var(--imgColor_white);
           }
+        }
+
+        button.current-page {
+          background-color: var(--thirdPrimaryTextColor);
         }
 
         button:hover {
@@ -103,10 +118,13 @@ img.reanotes-icon {
 
 @media screen and (width <= 700px) {
   .vertical-navbar-container {
-    display: flex;
+    display: blcok;
     flex-direction: column;
     height: 100%;
     width: 60px;
+
+    position: absolute;
+    top: 0;
 
     background-color: black;
     border: var(--border_tags);
@@ -124,5 +142,16 @@ img.reanotes-icon {
     border-bottom: none;
     border: none;
     padding: 1rem 0.2rem;
+
+    .navbar-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      position: absolute;
+      left: 10px;
+      height: 97vh;
+    }
   }
 }

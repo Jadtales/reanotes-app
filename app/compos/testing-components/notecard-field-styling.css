@@ -1,0 +1,28 @@
+div#container {
+  color: var(--textColor_gray_dark);
+
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: lighter;
+
+  border: none;
+  border-bottom: 2px solid #989898;
+  outline: none;
+  cursor: text;
+  width: 100%;
+  padding: 2px 0;
+}
+
+div#container[data-placeholder]:empty::before {
+  color: var(--textColor_gray_dark) !important;
+  opacity: 0.6 !important;
+  font-style: normal !important;
+}
+
+div#container *:focus {
+  outline: none;
+}
+
+div#container ol li[data-list='bullet'] {
+  list-style-type: disc;
+}
