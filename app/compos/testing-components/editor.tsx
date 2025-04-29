@@ -11,8 +11,6 @@ export default function Editor({ editingTools }: ComponentProps) {
   const tools = editingTools;
   const quillInstance = useRef<Quill | null>(null);
 
-  console.log(tools);
-
   useEffect(() => {
     if (!quillInstance.current) return;
     const quill = quillInstance.current;
