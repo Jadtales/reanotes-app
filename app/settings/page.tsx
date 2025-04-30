@@ -4,9 +4,12 @@ import { Fragment, ReactElement, useState } from 'react';
 import './settingsPageStyling.css';
 import GoBackToComponent from '@/app/compos/go-back-to-component/GoBackTo-Component';
 import GeneralSettingPageComponents from '@/app/compos/settings-page-components/GeneralSettings';
+import { useMediaQuery } from 'usehooks-ts';
 
 export default function SettingsPage(): ReactElement<any> {
   const [chosenSettings, setChosenSettings] = useState<string>('general');
+
+  const isInPhoneSize = useMediaQuery('(width <= 700px)');
 
   const handleChosenSettings = (setting: string): void => {
     setChosenSettings(setting);
@@ -15,7 +18,7 @@ export default function SettingsPage(): ReactElement<any> {
   return (
     <Fragment>
       <GoBackToComponent
-        margin={'0 15% 20px 15%'}
+        margin={`0 15% 20px ${isInPhoneSize ? '5%' : '15%'}`}
         withText={true}
         iconSize={'25px'}
       />

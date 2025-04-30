@@ -36,6 +36,7 @@ div.notes {
 @media screen and (max-width: 700px) {
   div.homePageContainer {
     margin: 0 5%;
+    height: 100%;
   }
 
   div.notes {
@@ -44,6 +45,5 @@ div.notes {
     /*flex-wrap: wrap;*/
     grid-template-columns: 1fr; /* Default 4 cards in a row */
     gap: 20px;
-    width: 90px;
   }
 }

@@ -9,7 +9,7 @@ import ArrowUpIcon from '@/public/icons/arrow-up-line.svg';
 import LockIcon from '@/public/icons/notesIcons/lockIcon.svg';
 import OpenLockIcon from '@/public/icons/notesIcons/openLockIcon.svg';
 import { useParams, useSearchParams } from 'next/navigation';
-import { useMediaQuery } from 'usehooks-ts';
+import { useEventListener, useMediaQuery } from 'usehooks-ts';
 
 interface ComponentProps {
   isNotecardsPublic: (isPublic: boolean) => void;
@@ -21,8 +21,13 @@ export default function NotecardCreationNavbar({
   const [isSharingButtonClicked, setIsSharingButtonClicked] =
     useState<boolean>(true);
 
-  const pageHeight = useMediaQuery('(height >= 300px)');
   const pageWidth = useMediaQuery('(width >= 700px)');
+
+  const [showNavbar, setShowNavbar] = useState(false);
+  useEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    setShowNavbar(scroll >= 600);
+  });
 
   const urlParams = useSearchParams();
 
@@ -44,7 +49,7 @@ export default function NotecardCreationNavbar({
     <div className='createnotes-topLayer'>
       <div
         className={
-          pageHeight
+          showNavbar
             ? 'creationButton-layer-withNavbar'
             : 'creationButton-layer'
         }
@@ -58,30 +63,30 @@ export default function NotecardCreationNavbar({
 
         {/*<span>Last saved, 3 seconds ago.</span>*/}
 
-        <div className='creationButtons'>
-          {pageHeight && (
-            <button
-              aria-label='go-up-button'
-              onClick={handleGoBackToTop}
-              className='arrow-up-button'
-            >
-              <Image src={ArrowUpIcon} alt='goUp' className='go-up-icon' />
-            </button>
-          )}
+        {showNavbar && (
+          <div className='creationButtons'>
+            {showNavbar && (
+              <button
+                aria-label='go-up-button'
+                onClick={handleGoBackToTop}
+                className='arrow-up-button'
+              >
+                <Image src={ArrowUpIcon} alt='goUp' className='go-up-icon' />
+              </button>
+            )}
 
-          <button className='sharingOption' onClick={switchSharingOption}>
-            {
+            <button className='sharingOption' onClick={switchSharingOption}>
               <Image
                 src={isSharingButtonClicked ? OpenLockIcon : LockIcon}
                 alt={'share-these-notecards'}
                 width={20}
               />
-            }
-            <span>{isSharingButtonClicked ? 'Public' : 'Private'}</span>
-          </button>
+              <span>{isSharingButtonClicked ? 'Public' : 'Private'}</span>
+            </button>
 
-          <button className='noteCreationButton'>Create</button>
-        </div>
+            <button className='noteCreationButton'>Create</button>
+          </div>
+        )}
       </div>
       <ImportExternal_NotecardComponents />
     </div>

@@ -1,9 +1,9 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { ReactElement, useState } from 'react';
 import './notesCreationCompoStyling.css';
-import Editor from '../testing-components/editor';
 import NotecardField from '../testing-components/notecard-field';
 import useEditingTools from '@/app/compos/notes-creation-components/term-description-fields/EditingTools';
 import notecardTextField from '@/app/compos/notes-creation-components/term-description-fields/notecard-text-field';
@@ -11,6 +11,10 @@ import DownArrowIcon from '@/public/icons/notesIcons/arrow-down-line.svg';
 import UpArrowIcon from '@/public/icons/notesIcons/arrow-up-line.svg';
 import DeleteCardIcon from '@/public/icons/notesIcons/close-line.svg';
 import AiIcon from '@/public/icons/notesIcons/sparkling-fill.svg';
+
+const Editor = dynamic(() => import('../testing-components/editor'), {
+  ssr: false,
+});
 
 interface ComponentProps {
   cardKey?: number;

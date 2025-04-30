@@ -1,3 +1,5 @@
+'use client';
+
 import Quill from 'quill';
 import { useCallback, useEffect, useRef } from 'react';
 import './notecard-field-styling.css';
@@ -44,6 +46,7 @@ export default function Editor({ editingTools }: ComponentProps) {
 
   const quillRef = useCallback((wrapper: HTMLDivElement) => {
     if (wrapper == null) return;
+
     wrapper.innerHTML = '';
     const editor = document.createElement('div');
     wrapper.append(editor);

@@ -13,6 +13,7 @@ import NoteCard from '@/app/compos/notes-creation-components/NoteCard';
 import NotecardCreationNavbar from '@/app/compos/notes-creation-components/topLayerComponents/notecard-creation-buttons';
 import NoteDescriptionAndTitleComponent from '@/app/compos/notes-creation-components/topLayerComponents/notecard-title-description-component';
 import CreatedNoteCardsInterface from '@/utils/interfaces/created-notecards-interface';
+import { useMediaQuery } from 'usehooks-ts';
 
 export default function Notes(): ReactElement {
   const [noteCards, setNoteCards] = useState<CreatedNoteCardsInterface>({
